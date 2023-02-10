@@ -9,4 +9,6 @@ public interface UserDao {
     void registerUser(User user);
 
     List<User> getUsers();
+
+    boolean validateUser(String email, String password);
 }

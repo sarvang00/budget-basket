@@ -22,4 +22,9 @@ public class UserDaoImpl implements UserDao{
     public List<User> getUsers() {
         return userRepository.findAll();
     }
+
+    @Override
+    public boolean validateUser(String email, String password) {
+        return userRepository.findUserByEmailPassword(email,password)!= null ? true : false;
+    }
 }

@@ -28,4 +28,10 @@ public class UserServiceImpl implements UserService{
     public List<User> getUsers() {
         return userDao.getUsers();
     }
+
+    @Override
+    @Transactional
+    public boolean validateUser(String email, String password) {
+        return userDao.validateUser(email, password);
+    }
 }
