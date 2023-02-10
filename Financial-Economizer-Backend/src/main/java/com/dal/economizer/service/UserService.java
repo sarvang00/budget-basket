@@ -4,5 +4,5 @@ import com.dal.economizer.model.User;
 
 public interface UserService {
 
-    void saveUser(User user);
+    void registerUser(User user);
 }
