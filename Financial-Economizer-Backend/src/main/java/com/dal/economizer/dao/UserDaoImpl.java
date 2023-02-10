@@ -27,4 +27,9 @@ public class UserDaoImpl implements UserDao{
     public boolean validateUser(String email, String password) {
         return userRepository.findUserByEmailPassword(email,password)!= null ? true : false;
     }
+
+    @Override
+    public void updateUser(User user) {
+        userRepository.save(user);
+    }
 }

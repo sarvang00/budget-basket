@@ -11,4 +11,6 @@ public interface UserService {
     List<User> getUsers();
 
     boolean validateUser(String email, String password);
+
+    void updateUser(User user);
 }

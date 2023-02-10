@@ -34,4 +34,9 @@ public class UserServiceImpl implements UserService{
     public boolean validateUser(String email, String password) {
         return userDao.validateUser(email, password);
     }
+
+    @Override
+    public void updateUser(User user) {
+        userDao.updateUser(user);
+    }
 }

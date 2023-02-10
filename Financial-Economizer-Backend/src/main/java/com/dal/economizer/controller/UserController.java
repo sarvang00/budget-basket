@@ -21,6 +21,12 @@ public class UserController {
         userService.registerUser(user);
     }
 
+    @PutMapping("/updateUser")
+    public void updateUser(@RequestBody User user){
+        System.out.println(user.getFirstName() +" , "+user.getEmail() + " - updated");
+        userService.updateUser(user);
+    }
+
     @GetMapping("/getUsers")
     public List<User> getUsers(){
         return userService.getUsers();
@@ -30,7 +36,7 @@ public class UserController {
     @PostMapping("/loginValidate")
     public boolean loginValidate(@RequestBody Map<String, String> loginRequest) {
 
-        System.out.println(userService.validateUser(loginRequest.get("email"), loginRequest.get("password"))==true? "User found" : "User Not Found");
+        System.out.println(userService.validateUser(loginRequest.get("email"), loginRequest.get("password"))==true? loginRequest.get("email")+" - User found" : loginRequest.get("email")+ " - User Not Found");
         return userService.validateUser(loginRequest.get("email"), loginRequest.get("password"));
     }
 
