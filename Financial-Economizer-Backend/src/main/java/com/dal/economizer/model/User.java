@@ -3,18 +3,19 @@ package com.dal.economizer.model;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private Long id;
+    private int userId;
 
-    @Column(name = "user_first_name")
+    @Column(name = "user_firstname")
     private String firstName;
 
-    @Column(name = "user_last_name")
+    @Column(name = "user_fastname")
     private String lastName;
 
     @Column(name = "user_email", unique = true)
@@ -27,15 +28,19 @@ public class User {
     private String phoneNumber;
 
     @Column(name = "user_created", updatable = false)
-    private Date createdAt=new Date();
+    private Date createdAt = new Date();
 
     @Column(name = "user_updated")
     private Date updatedAt;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<UserAddress> userAddresses;
+
     public User() {
     }
 
-    public User(Long id, String firstName, String lastName, String email, String password, String phoneNumber, Date createdAt, Date updatedAt) {
-        this.id = id;
+    public User(int userId, String firstName, String lastName, String email, String password, String phoneNumber, Date createdAt, Date updatedAt, List<UserAddress> userAddresses) {
+        this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -43,14 +48,15 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.userAddresses = userAddresses;
     }
 
-    public Long getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getFirstName() {
@@ -109,10 +115,18 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
+    public List<UserAddress> getUserAddresses() {
+        return userAddresses;
+    }
+
+    public void setUserAddresses(List<UserAddress> userAddresses) {
+        this.userAddresses = userAddresses;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "id=" + userId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
@@ -120,6 +134,7 @@ public class User {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
+                ", userAddresses=" + userAddresses +
                 '}';
     }
 }
