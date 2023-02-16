@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { UserManagementRoutingModule } from './user-management-routing.module';
 
-import { SignInComponent } from './signin.component';
-import { SignOutComponent } from './signout.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignOutComponent } from './sign-out/sign-out.component';
 
 @NgModule({
   declarations: [SignInComponent, SignOutComponent],
@@ -12,7 +12,6 @@ import { SignOutComponent } from './signout.component';
     CommonModule,
     UserManagementRoutingModule
   ],
-  exports: [SignInComponent, SignOutComponent],
   providers: [],
   bootstrap: [SignInComponent, SignOutComponent]
 })
