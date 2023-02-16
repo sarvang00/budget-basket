@@ -4,15 +4,15 @@ import { CommonModule } from '@angular/common';
 import { UserManagementRoutingModule } from './user-management-routing.module';
 
 import { SignInComponent } from './sign-in/sign-in.component';
-import { SignOutComponent } from './sign-out/sign-out.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
-  declarations: [SignInComponent, SignOutComponent],
+  declarations: [SignInComponent, SignUpComponent],
   imports: [
     CommonModule,
     UserManagementRoutingModule
   ],
   providers: [],
-  bootstrap: [SignInComponent, SignOutComponent]
+  bootstrap: [SignInComponent, SignUpComponent]
 })
 export class UserManagementModule { }
