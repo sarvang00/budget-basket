@@ -6,9 +6,10 @@ import { UserManagementRoutingModule } from './user-management-routing.module';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [SignInComponent, SignUpComponent, ForgotPasswordComponent],
+  declarations: [NavbarComponent, SignInComponent, SignUpComponent, ForgotPasswordComponent],
   imports: [
     CommonModule,
     UserManagementRoutingModule
