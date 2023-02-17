@@ -17,6 +17,11 @@ public class ProductDao {
         this.productRepository = productRepository;
     }
 
+    public List<Product> findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(String entry1, String entry2) {
+        return productRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(entry1, entry2);
+    }
+
+
     public List<Product> findAll() {
         return productRepository.findAll();
     }
