@@ -8,11 +8,13 @@ import { StoreModule } from './store/store.module';
 
 import { UserManagementModule } from './user-management/user-management.module';
 import { FooterComponent } from './footer/footer.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
