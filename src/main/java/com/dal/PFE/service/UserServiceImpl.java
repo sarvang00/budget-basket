@@ -1,7 +1,7 @@
-package com.dal.economizer.service;
+package com.dal.PFE.service;
 
-import com.dal.economizer.dao.UserDao;
-import com.dal.economizer.model.User;
+import com.dal.PFE.dao.UserDao;
+import com.dal.PFE.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements com.dal.PFE.service.UserService {
 
 
     @Autowired

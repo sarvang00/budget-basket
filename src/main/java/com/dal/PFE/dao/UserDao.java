@@ -1,6 +1,6 @@
-package com.dal.economizer.dao;
+package com.dal.PFE.dao;
 
-import com.dal.economizer.model.User;
+import com.dal.PFE.model.User;
 
 import java.util.List;
 

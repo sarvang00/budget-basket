@@ -1,7 +1,7 @@
-package com.dal.economizer.controller;
+package com.dal.PFE.controller;
 
-import com.dal.economizer.model.User;
-import com.dal.economizer.service.UserService;
+import com.dal.PFE.model.User;
+import com.dal.PFE.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

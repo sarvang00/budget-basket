@@ -1,14 +1,14 @@
-package com.dal.economizer.dao;
+package com.dal.PFE.dao;
 
-import com.dal.economizer.model.User;
-import com.dal.economizer.repository.UserRepository;
+import com.dal.PFE.model.User;
+import com.dal.PFE.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements com.dal.PFE.dao.UserDao {
 
     @Autowired
     private UserRepository userRepository;

@@ -1,7 +1,7 @@
-package com.dal.economizer.service;
+package com.dal.PFE.service;
 
-import com.dal.economizer.dao.ProductDao;
-import com.dal.economizer.model.Product;
+import com.dal.PFE.dao.ProductDao;
+import com.dal.PFE.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -11,15 +11,16 @@ public class ProductService {
     @Autowired
     private ProductDao productDao;
 
-    public List<Product> getAllProducts(String searchbar_entry){
 
+    public List<Product> getAllProducts(String searchbar_entry){
         if(searchbar_entry.equals("")) {
             return productDao.findAll();
         }
         else {
-            return productDao.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(searchbar_entry, searchbar_entry);
+            return productDao.findByProductNameContainingIgnoreCaseOrCategoryNameContainingIgnoreCase(searchbar_entry, searchbar_entry);
         }
     }
+
 
 }
 

@@ -1,6 +1,6 @@
-package com.dal.economizer.service;
+package com.dal.PFE.service;
 
-import com.dal.economizer.model.User;
+import com.dal.PFE.model.User;
 
 import java.util.List;
 

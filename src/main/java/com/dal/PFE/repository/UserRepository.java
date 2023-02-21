@@ -1,6 +1,6 @@
-package com.dal.economizer.repository;
+package com.dal.PFE.repository;
 
-import com.dal.economizer.model.User;
+import com.dal.PFE.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User,Integer> {

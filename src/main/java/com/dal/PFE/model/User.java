@@ -1,4 +1,4 @@
-package com.dal.economizer.model;
+package com.dal.PFE.model;
 
 import jakarta.persistence.*;
 
