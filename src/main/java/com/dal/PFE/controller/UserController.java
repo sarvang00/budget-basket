@@ -16,7 +16,7 @@ public class UserController {
 
     @PostMapping("/registerUser")
     public void registerUser(@RequestBody User user){
-        System.out.println(user.getName() +" , "+user.getEmail());
+        System.out.println(user.getFirstName() +" , "+user.getEmail());
         userService.registerUser(user);
     }
 
