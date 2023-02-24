@@ -25,28 +25,29 @@
                         <div class="row g-3">
                             <!-- col -->
                             <div class="col">
-                                <!-- input --><input type="text" class="form-control" placeholder="First name"
-                                    aria-label="First name" required>
+                                <!-- input -->
+                                <input type="text" class="form-control" placeholder="First name"
+                                    aria-label="First name" required [(ngModel)]="userFirstName" name="userFirstName">
                             </div>
                             <div class="col">
                                 <!-- input --><input type="text" class="form-control" placeholder="Last name"
-                                    aria-label="Last name" required>
+                                    aria-label="Last name" required [(ngModel)]="userLastName" name="userLastName">
                             </div>
                             <div class="col-12">
 
                                 <!-- input --><input type="email" class="form-control" id="inputEmail4"
-                                    placeholder="Email" required>
+                                    placeholder="Email" required [(ngModel)]="userEmail" name="userEmail">
                             </div>
                             <div class="col-12">
 
                                 <div class="password-field position-relative">
                                     <input type="password" id="fakePassword" placeholder="Enter Password"
-                                        class="form-control" required>
+                                        class="form-control" required [(ngModel)]="userPassword" name="userPassword">
                                     <span><i id="passwordToggler" class="bi bi-eye-slash"></i></span>
                                 </div>
                             </div>
                             <!-- btn -->
-                            <div class="col-12 d-grid"> <button type="submit" class="btn btn-primary">Register</button>
+                            <div class="col-12 d-grid"> <button type="submit" class="btn btn-primary" (click)="handleSignUp()">Register</button>
                             </div>
 
                             <!-- text -->

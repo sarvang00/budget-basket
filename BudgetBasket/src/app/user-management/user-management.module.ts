@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'
 
 import { UserManagementRoutingModule } from './user-management-routing.module';
 
-import { SignInComponent } from './sign-in/sign-in.component';
+import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [NavbarComponent, SignInComponent, SignUpComponent, ForgotPasswordComponent],
+  declarations: [NavbarComponent, LogInComponent, SignUpComponent, ForgotPasswordComponent],
   imports: [
     CommonModule,
-    UserManagementRoutingModule
+    UserManagementRoutingModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [SignInComponent]
+  bootstrap: [LogInComponent]
 })
 export class UserManagementModule { }
