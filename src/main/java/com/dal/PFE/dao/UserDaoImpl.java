@@ -22,4 +22,14 @@ public class UserDaoImpl implements com.dal.PFE.dao.UserDao {
     public List<User> getUsers() {
         return userRepository.findAll();
     }
+
+    @Override
+    public boolean validateUser(String email, String password) {
+        return userRepository.findUserByEmailPassword(email,password)!= null ? true : false;
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userRepository.save(user);
+    }
 }
