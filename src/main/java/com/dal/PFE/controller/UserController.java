@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("user")
 public class UserController {
 
@@ -34,9 +35,9 @@ public class UserController {
     }
 
     @PostMapping("/loginValidate")
-    public boolean loginValidate(@RequestBody Map<String, String> loginRequest) {
+    public User loginValidate(@RequestBody Map<String, String> loginRequest) {
 
-        System.out.println(userService.validateUser(loginRequest.get("email"), loginRequest.get("password"))==true? loginRequest.get("email")+" - User found" : loginRequest.get("email")+ " - User Not Found");
+        System.out.println(userService.validateUser(loginRequest.get("email"), loginRequest.get("password")).getFirstName());
         return userService.validateUser(loginRequest.get("email"), loginRequest.get("password"));
     }
 

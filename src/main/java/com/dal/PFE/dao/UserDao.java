@@ -10,7 +10,8 @@ public interface UserDao {
 
     List<User> getUsers();
 
-    boolean validateUser(String email, String password);
+    User validateUser(String email, String password);
+
 
     void updateUser(User user);
 }

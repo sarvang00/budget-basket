@@ -32,7 +32,7 @@ public class UserServiceImpl implements com.dal.PFE.service.UserService {
 
     @Override
     @Transactional
-    public boolean validateUser(String email, String password) {
+    public User validateUser(String email, String password) {
         return userDao.validateUser(email, password);
     }
 

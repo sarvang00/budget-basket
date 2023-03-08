@@ -24,8 +24,8 @@ public class UserDaoImpl implements com.dal.PFE.dao.UserDao {
     }
 
     @Override
-    public boolean validateUser(String email, String password) {
-        return userRepository.findUserByEmailPassword(email,password)!= null ? true : false;
+    public User validateUser(String email, String password) {
+        return userRepository.findUserByEmailPassword(email,password);
     }
 
     @Override
