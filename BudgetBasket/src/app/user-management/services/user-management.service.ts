@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { NONE_TYPE } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
@@ -8,42 +9,15 @@ import { User } from '../model/User';
   providedIn: 'root'
 })
 export class UserManagementService {
-  users!: User[];
-  constructor() {
-    this.users = [
-      {
-        id: "111",
-        name: "aaa bbb",
-        email: "qw@aw.ca",
-        password: "hesoyam",
-      },
-      {
-        id: "222",
-        name: "bbb ccc",
-        email: "we@aw.ca",
-        password: "hesoyam",
-      },
-      {
-        id: "333",
-        name: "ccc ddd",
-        email: "er@aw.ca",
-        password: "hesoyam",
-      }
-    ]
-  }
-
-  getUsers() {
-    return this.users;
+  private authUser!: User;
+  constructor(private httpClient : HttpClient) {
   }
 
   signUpUser(user: User) {
-    this.users.push(user);
+    this.httpClient.post('http://localhost:9090/user/registerUser', user).subscribe(data => console.log(data));
   }
 
-  removeUser(user: User) {
-    const indexofTodo = this.users.findIndex(
-      (currentObj) => currentObj.id === user.id,
-    );
-    this.users.splice(indexofTodo, 1);
+  signInUser(userCredentials: any) {
+    this.httpClient.post<User>('http://localhost:9090/user/loginValidate', userCredentials).subscribe(data => {this.authUser=data});
   }
 }

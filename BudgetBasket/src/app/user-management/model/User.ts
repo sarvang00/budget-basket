@@ -1,6 +1,12 @@
+import { UserAddress } from "./UserAddress";
+
 export interface User {
-    id: string;
-    name: string;
+    firstName: string;
+    lastName: string;
     email: string;
     password: string;
+    phoneNumber: string;
+    createdAt: Date;
+    updatedAt: Date;
+    userAddress: UserAddress;
 }

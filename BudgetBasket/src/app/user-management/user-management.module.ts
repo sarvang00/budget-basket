@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 
 import { UserManagementRoutingModule } from './user-management-routing.module';
@@ -14,7 +15,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     CommonModule,
     UserManagementRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [LogInComponent]
