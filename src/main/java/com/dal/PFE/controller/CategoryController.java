@@ -3,11 +3,13 @@ package com.dal.PFE.controller;
 import com.dal.PFE.model.Category;
 import com.dal.PFE.service.CategoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("category")
 public class CategoryController {
 
     @Autowired
@@ -16,5 +18,10 @@ public class CategoryController {
     @GetMapping({"/getCategoryByName"})
     public Category getCategoryByName(@RequestParam String categoryName) {
         return categoryService.getCategoryByName(categoryName);
+    }
+
+    @GetMapping({"/getAllCategory"})
+    public List<Category> getAllCategory() {
+        return categoryService.getAllCategory();
     }
 }
