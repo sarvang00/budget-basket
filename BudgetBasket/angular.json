@@ -25,9 +25,32 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/assets/libs/slick-carousel/slick/slick.css",
+              "src/assets/libs/slick-carousel/slick/slick-theme.css",
+              "src/assets/libs/tiny-slider/dist/tiny-slider.css",
+              "src/assets/libs/bootstrap-icons/font/bootstrap-icons.css",
+              "src/assets/libs/feather-webfont/dist/feather-icons.css",
+              "src/assets/libs/simplebar/dist/simplebar.min.css",
+              "src/assets/css/theme.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/libs/simplebar/dist/simplebar.min.js",
+              "src/assets/js/theme.min.js",
+              "src/assets/libs/jquery-countdown/dist/jquery.countdown.min.js",
+              "src/assets/js/vendors/countdown.js",
+              "src/assets/libs/slick-carousel/slick/slick.min.js",
+              "src/assets/js/vendors/slick-slider.js",
+              "src/assets/libs/tiny-slider/dist/min/tiny-slider.js",
+              "src/assets/js/vendors/tns-slider.js",
+              "src/assets/js/vendors/zoom.js",
+              "src/assets/js/vendors/increment-value.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -87,9 +110,31 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/libs/slick-carousel/slick/slick.css",
+              "src/assets/libs/slick-carousel/slick/slick-theme.css",
+              "src/assets/libs/tiny-slider/dist/tiny-slider.css",
+              "src/assets/libs/bootstrap-icons/font/bootstrap-icons.css",
+              "src/assets/libs/feather-webfont/dist/feather-icons.css",
+              "src/assets/libs/simplebar/dist/simplebar.min.css",
+              "src/assets/css/theme.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/libs/simplebar/dist/simplebar.min.js",
+              "src/assets/js/theme.min.js",
+              "src/assets/libs/jquery-countdown/dist/jquery.countdown.min.js",
+              "src/assets/js/vendors/countdown.js",
+              "src/assets/libs/slick-carousel/slick/slick.min.js",
+              "src/assets/js/vendors/slick-slider.js",
+              "src/assets/libs/tiny-slider/dist/min/tiny-slider.js",
+              "src/assets/js/vendors/tns-slider.js",
+              "src/assets/js/vendors/zoom.js",
+              "src/assets/js/vendors/increment-value.js"
+            ]
           }
         }
       }

@@ -9,6 +9,7 @@ import { SignUpComponent } from './user-management/sign-up/sign-up.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'login', component: LogInComponent },
+  { path: 'signin', component: LogInComponent },
   { path: 'signup', component: SignUpComponent },
   { path: '**', pathMatch: 'full', component: NotFoundComponent }
 ];
