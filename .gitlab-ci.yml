@@ -1,0 +1,49 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build job 1:
+  stage: build
+  image: maven:latest
+  script:
+    - echo "Building the job1"
+  artifacts:
+    paths:
+      - target
+  tags:
+    - ugrad
+
+
+build job 2:
+  stage: build
+  image: maven:latest
+  script:
+    - echo "Building the job2"
+  artifacts:
+    paths:
+      - target
+  tags:
+    - ugrad
+
+test job 1:
+  stage: test
+  image: maven:latest
+  script:
+    - echo "Testing the job2"
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - target/ProjectReports/TEST_*.xml
+
+test job 2:
+  stage: test
+  image: maven:latest
+  script:
+    - echo "testing the job2"
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - target/ProjectReports/TEST_*.xml

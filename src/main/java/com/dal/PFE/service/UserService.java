@@ -9,4 +9,9 @@ public interface UserService {
     void registerUser(User user);
 
     List<User> getUsers();
+
+    User validateUser(String email, String password);
+
+    void updateUser(User user);
+
 }
