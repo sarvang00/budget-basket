@@ -17,6 +17,8 @@ public class ProductDaoImpl implements ProductDao{
         return productRepository.findByProductNameContainingIgnoreCaseOrCategory_CategoryNameContainingIgnoreCase(entry1, entry2);
     }
 
+
+
     public List<Product> findAll() {
         return productRepository.findAll();
     }

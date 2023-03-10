@@ -19,6 +19,9 @@ public class Product {
     @JsonIgnoreProperties({"products", "hibernateLazyInitializer", "handler"})
     private Category category;
 
+
+
+
     public Long getId() {
         return product_id;
     }
