@@ -19,6 +19,12 @@ public class Product {
     @JsonIgnoreProperties({"products", "hibernateLazyInitializer", "handler"})
     private Category category;
 
+    public Product(long product_id, String productName) {
+        this.product_id = product_id;
+        this.productName = productName;
+    }
+
+
     public Long getId() {
         return product_id;
     }
@@ -35,12 +41,12 @@ public class Product {
         this.productName = productName;
     }
 
-    public Category getCategory() {
+   /* public Category getCategory() {
         return category;
     }
 
     public void setCategory(Category category) {
         this.category = category;
-    }
+    }*/
 }
 

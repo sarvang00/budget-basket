@@ -23,13 +23,10 @@ public class Category {
    // @Column(name = "default_expiry_time")
    // private int defaultExpiryTime;
 
-    /*@OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer"})
     @JsonIgnore
     private List<Product> productList = new ArrayList<>();
-
-
-     */
 
     public Long getCategoryId() {
         return categoryId;
