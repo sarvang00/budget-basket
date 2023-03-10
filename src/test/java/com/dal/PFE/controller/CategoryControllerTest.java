@@ -33,6 +33,7 @@ public class CategoryControllerTest {
         MockitoAnnotations.openMocks(this);
     }
 
+
     @Test
     public void testingGetCategoryByName() throws Exception {
         Category category = new Category();

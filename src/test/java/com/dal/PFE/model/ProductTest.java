@@ -24,3 +24,4 @@ public class ProductTest {
         assertEquals("TestProduct", product.getName());
     }
 }
+
