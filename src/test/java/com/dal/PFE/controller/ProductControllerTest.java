@@ -47,7 +47,7 @@ public class ProductControllerTest {
         productList.add(new Product(102L, "TestProduct 2"));
         when(productService.getAllProducts("")).thenReturn(productList);
 
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/getAllProducts"))
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/product/getAllProducts"))
                 .andReturn();
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
