@@ -11,8 +11,11 @@ import java.util.List;
 public class ProductDaoImpl implements ProductDao{
     @Autowired
     ProductRepository productRepository;
+    public ProductDaoImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
-
+    @Override
     public List<Product> findByProductNameContainingIgnoreCaseOrCategoryNameContainingIgnoreCase(String entry1, String entry2) {
         return productRepository.findByProductNameContainingIgnoreCaseOrCategory_CategoryNameContainingIgnoreCase(entry1, entry2);
     }

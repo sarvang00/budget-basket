@@ -1,9 +1,8 @@
 package com.dal.PFE.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-
-import java.util.Date;
 
 @Entity
 @Table(name = "product_details")
@@ -18,6 +17,7 @@ public class Product {
     @JoinColumn(name = "category_id")
     @JsonIgnoreProperties({"products", "hibernateLazyInitializer", "handler"})
     private Category category;
+
 
     public Product(long product_id, String productName) {
         this.product_id = product_id;
@@ -41,12 +41,15 @@ public class Product {
         this.productName = productName;
     }
 
-   /* public Category getCategory() {
+    @JsonIgnore
+    public Category getCategory() {
         return category;
     }
 
     public void setCategory(Category category) {
         this.category = category;
-    }*/
+    }
 }
+
+
 
