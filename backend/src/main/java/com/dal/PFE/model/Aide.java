@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "aide")
-public class Aide {
+public class Aide implements Mart{
 
     @Id
     @Column(name = "mart_prod_id")
@@ -98,5 +98,18 @@ public class Aide {
 
     public void setProductAvailability(boolean productAvailability) {
         this.productAvailability = productAvailability;
+    }
+
+    @Override
+    public String toString() {
+        return "Aide{" +
+                "martProdId=" + martProdId +
+                ", productId=" + productId +
+                ", productPrice=" + productPrice +
+                ", priceQuantity=" + priceQuantity +
+                ", unit='" + unit + '\'' +
+                ", productDescription='" + productDescription + '\'' +
+                ", productAvailability=" + productAvailability +
+                '}';
     }
 }

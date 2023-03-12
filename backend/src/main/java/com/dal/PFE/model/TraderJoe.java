@@ -100,4 +100,17 @@ public class TraderJoe {
     public void setProductAvailability(boolean productAvailability) {
         this.productAvailability = productAvailability;
     }
+
+    @Override
+    public String toString() {
+        return "TraderJoe{" +
+                "martProdId=" + martProdId +
+                ", productId=" + productId +
+                ", productPrice=" + productPrice +
+                ", priceQuantity=" + priceQuantity +
+                ", unit='" + unit + '\'' +
+                ", productDescription='" + productDescription + '\'' +
+                ", productAvailability=" + productAvailability +
+                '}';
+    }
 }

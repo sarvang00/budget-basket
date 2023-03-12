@@ -1,14 +1,12 @@
 package com.dal.PFE.controller;
 
-import com.dal.PFE.model.Aide;
-import com.dal.PFE.model.Kroger;
-import com.dal.PFE.model.Product;
-import com.dal.PFE.model.TraderJoe;
+import com.dal.PFE.model.*;
 import com.dal.PFE.service.MartService;
 import com.dal.PFE.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -22,10 +20,16 @@ public class ProductController {
     @Autowired
     MartService martService;
 
-    @GetMapping("/getAllProducts")
-    public List<Product> getAllProducts(@RequestParam(defaultValue = "") String searchbar_entry) {
-        return productService.getAllProducts(searchbar_entry);
+    @GetMapping("/getAllProductsIdsSearched")
+    public List<Product> getAllProductsIdsSearched(@RequestParam(value="keyword",defaultValue = "") String searchbar_entry) {
 
+        return productService.getAllProductsIdsSearched(searchbar_entry);
+    }
+
+    @GetMapping("/getAllSearchedProducts")
+    public List<ProductAndMart> getAllSearchedProducts(@RequestParam(value="keyword",defaultValue = "") String searchbar_entry){
+
+        return productService.getAllSearchedProducts(searchbar_entry);
     }
 
     @GetMapping("/getAllProductsFromKroger")

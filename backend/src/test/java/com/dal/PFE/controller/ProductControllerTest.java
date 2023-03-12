@@ -45,7 +45,7 @@ public class ProductControllerTest {
         List<Product> productList = new ArrayList<>();
         productList.add(new Product(101L, "TestProduct 1"));
         productList.add(new Product(102L, "TestProduct 2"));
-        when(productService.getAllProducts("")).thenReturn(productList);
+        when(productService.getAllProductsIdsSearched("")).thenReturn(productList);
 
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/product/getAllProducts"))
                 .andReturn();
