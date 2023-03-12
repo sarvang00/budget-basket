@@ -3,66 +3,47 @@ stages:
   - test
   - deploy
 
-build:
+build job 1:
   stage: build
   image: maven:latest
   script:
-    - echo "Building the pipeline"
-    - mvn clean package
+    - echo "Building the job1"
   artifacts:
     paths:
       - target
   tags:
     - ugrad
 
-test:
+
+build job 2:
+  stage: build
+  image: maven:latest
+  script:
+    - echo "Building the job2"
+  artifacts:
+    paths:
+      - target
+  tags:
+    - ugrad
+
+test job 1:
   stage: test
   image: maven:latest
+  script:
+    - echo "Testing the job2"
   artifacts:
     when: always
     reports:
       junit:
         - target/ProjectReports/TEST_*.xml
 
+test job 2:
+  stage: test
+  image: maven:latest
   script:
-    - echo "Pipeline test started"
-    - mvn verify
-  tags:
-    - ugrad
-
-deploy_dev:
-  stage: deploy
-  tags:
-    - ugrad
+    - echo "testing the job2"
   artifacts:
-    paths:
-      - target
-  script:
-    - echo "dbURL=$DATABASE_TEST_URL" > config.properties
-    - echo "dbUserName=$DATABASE_TEST_USERNAME" >> config.properties
-    - echo "dbPassword=$DATABASE_TEST_PASSWORD" >> config.properties
-    - echo "dbDriver=$DATABASE_DRIVER" >> config.properties
-    - echo "Deploying the development pipeline"
-    - chmod og-rwx ${DEPLOY_SSH_KEY}
-    - scp -r -o StrictHostKeyChecking=no -i ${DEPLOY_SSH_KEY} target/*.jar "${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIR}/final_image.jar"
-  only:
-    - dev
-
-deploy_release:
-  stage: deploy
-  tags:
-    - ugrad
-  artifacts:
-    paths:
-      - target
-  script:
-    - echo "dbURL=$DATABASE_PROD_URL" > config.properties
-    - echo "dbUserName=$DATABASE_PROD_USERNAME" >> config.properties
-    - echo "dbPassword=$DATABASE_PROD_PASSWORD" >> config.properties
-    - echo "dbDriver=$DATABASE_DRIVER" >> config.properties
-    - echo "Deploying the release pipeline"
-    - chmod og-rwx ${DEPLOY_PROD_SSH_KEY}
-    - zip -r ${CI_COMMIT_SHORT_SHA}.zip target
-    - scp -r -o StrictHostKeyChecking=no -i "${DEPLOY_PROD_SSH_KEY}" ${CI_COMMIT_SHORT_SHA}.zip "${DEPLOY_PROD_USER}@${DEPLOY_HOST}:${DEPLOY_DIR}/${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHORT_SHA}.zip"
-  only:
-    - release
+    when: always
+    reports:
+      junit:
+        - target/ProjectReports/TEST_*.xml
