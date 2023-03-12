@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { User } from '../model/User';
 import { UserAddress } from '../model/UserAddress';
 import { v4 as uuidv4 } from 'uuid';
-import { UserManagementService } from '../services/user-management.service';
+import { UserManagementService } from '../../services/user-management.service';
 import { Router } from '@angular/router';
 
 @Component({

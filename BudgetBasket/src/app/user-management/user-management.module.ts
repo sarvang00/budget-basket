@@ -9,6 +9,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UserManagementService } from '../services/user-management.service';
 
 @NgModule({
   declarations: [NavbarComponent, LogInComponent, SignUpComponent, ForgotPasswordComponent],
@@ -19,6 +20,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [LogInComponent]
+  bootstrap: [LogInComponent],
+  exports: [],
 })
 export class UserManagementModule { }

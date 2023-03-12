@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserManagementService } from '../services/user-management.service';
+import { UserManagementService } from '../../services/user-management.service';
 
 @Component({
   selector: 'app-log-in',
@@ -20,11 +20,16 @@ export class LogInComponent {
       "password": this.password
     }
 
-    this.userService.signInUser(userCreds);
-
-    this.username="";
-    this.password="";
-    
-    this.router.navigate(['/']);
+    this.userService.signInUser(userCreds).subscribe(() => {
+      this.username="";
+      this.password="";
+      
+      this.router.navigate(['/store']);
+    }, (error) => {
+      if (error.status === 500) {
+        alert("Incorrect credentials, please retry!")
+        window.location.reload();
+      }
+    });
   }
 }
