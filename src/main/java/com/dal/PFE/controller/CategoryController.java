@@ -15,12 +15,12 @@ public class CategoryController {
     @Autowired
     private CategoryServiceImpl categoryService;
 
-    @GetMapping({"/getCategoryByName"})
+    @GetMapping("/getCategoryByName")
     public Category getCategoryByName(@RequestParam String categoryName) {
         return categoryService.getCategoryByName(categoryName);
     }
 
-    @GetMapping({"/getAllCategory"})
+    @GetMapping("/getAllCategory")
     public List<Category> getAllCategory() {
         return categoryService.getAllCategory();
     }

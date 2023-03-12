@@ -37,6 +37,7 @@ public class UserServiceImpl implements com.dal.PFE.service.UserService {
     }
 
     @Override
+    @Transactional
     public void updateUser(User user) {
         userDao.updateUser(user);
     }

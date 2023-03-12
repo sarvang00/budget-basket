@@ -24,6 +24,8 @@ public class Product {
         this.productName = productName;
     }
 
+    public Product(){}
+
 
     public Long getId() {
         return product_id;

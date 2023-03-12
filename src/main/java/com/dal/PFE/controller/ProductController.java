@@ -21,7 +21,8 @@ public class ProductController {
 
     @Autowired
     MartService martService;
-    @GetMapping({"/getAllProducts"})
+
+    @GetMapping("/getAllProducts")
     public List<Product> getAllProducts(@RequestParam(defaultValue = "") String searchbar_entry) {
         return productService.getAllProducts(searchbar_entry);
 

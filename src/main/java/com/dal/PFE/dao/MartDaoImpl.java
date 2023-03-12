@@ -35,10 +35,7 @@ public class MartDaoImpl implements MartDao{
     //}
 
     @Override
-    public List<Kroger> getAllProductFromKroger() {
-
-        return krogerRepository.findAll();
-    }
+    public List<Kroger> getAllProductFromKroger() { return krogerRepository.findAll(); }
 
     @Override
     public List<Aide> getAllProductFromAide() {
