@@ -9,16 +9,19 @@ import { User } from 'src/app/user-management/model/User';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  myAuthUser: any;
+  myAuthUser!: User;
   constructor(private userService: UserManagementService, private router: Router) {
-    userService.getAuthUser().subscribe((user) => {
-      this.myAuthUser = user;
-    });
+    this.myAuthUser = userService.getAuthUser();
   }
 
   ngOnInit(): void {
-    if(this.myAuthUser==null) {
+    if(this.userService.getAuthUser()==null) {
       this.router.navigate(['/']);
     }
+  }
+
+  logOut() {
+    this.userService.signOutUser();
+    this.router.navigate(['/']);
   }
 }
