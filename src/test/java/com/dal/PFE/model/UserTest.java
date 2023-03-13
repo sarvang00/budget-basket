@@ -14,7 +14,15 @@ public class UserTest {
 
      User testUser = new User();
 
+     private final PrintStream standardOut = System.out;
+     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
+     @BeforeEach
+     public void setUp() {
+          System.setOut(new PrintStream(outputStreamCaptor));
+     }
+
+     @Test
 
 
 
