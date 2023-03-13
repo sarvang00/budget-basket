@@ -12,7 +12,7 @@ import java.io.PrintStream;
 public class UserTest {
 
 
-     User testUser = new User();
+     UserTest testUser = new UserTest();
 
      private final PrintStream standardOut = System.out;
      private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
@@ -38,8 +38,25 @@ public class UserTest {
           userAddresses.add("young street");
           
           User user1 = new User(userId,firstName,lastName,email,password,phoneNumber,createdAt,updatedAt,userAddresses);
-          
      }
 
+
+     public void canHandleDuplicateUser(){
+
+          testUser.canHandleSingleUser();
+          int userId = 1;
+          String firstName = "dev";
+          String lastName = "k";
+          String email = "dev@budgetb.com";
+          String password "abc123";
+          String phoneNumber = '987654321';
+          Date createdAt = '12/03/2023';
+          Date updatedAt = '12/03/2023';
+          List<UserAddress> userAddresses;
+          userAddresses.add("young street");
+
+          User user2 = new User(userId,firstName,lastName,email,password,phoneNumber,createdAt,updatedAt,userAddresses);
+          
+     }
 
 }
