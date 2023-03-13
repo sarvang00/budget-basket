@@ -23,7 +23,23 @@ public class UserTest {
      }
 
      @Test
-
+     @Test
+     public void canHandleSingleUser() {
+          
+          int userId = 1;
+          String firstName = "dev";
+          String lastName = "k";
+          String email = "dev@budgetb.com";
+          String password "abc123";
+          String phoneNumber = '987654321';
+          Date createdAt = '12/03/2023';
+          Date updatedAt = '12/03/2023';
+          List<UserAddress> userAddresses;
+          userAddresses.add("young street");
+          
+          User user1 = new User(userId,firstName,lastName,email,password,phoneNumber,createdAt,updatedAt,userAddresses);
+          
+     }
 
 
 }
