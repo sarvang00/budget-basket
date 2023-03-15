@@ -13,6 +13,12 @@ export class LogInComponent {
 
   constructor(private userService: UserManagementService, private router: Router) {}
 
+  ngOnInit(): void {
+    if(this.userService.getAuthUser()!=null) {
+      this.router.navigate(['/store']);
+    }
+  }
+
   handleLogIn() {
     
     const userCreds = {
