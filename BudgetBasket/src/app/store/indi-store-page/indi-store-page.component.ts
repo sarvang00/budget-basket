@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { IstoreService } from 'src/app/services/istore.service';
 
 @Component({
@@ -9,9 +10,18 @@ import { IstoreService } from 'src/app/services/istore.service';
 export class IndiStorePageComponent {
   storeName!: String;
   public storeData!: any;
-  constructor(private storeService: IstoreService) {
+  constructor(private storeService: IstoreService, private router: Router) {
     this.storeName = this.storeService.storeName;
-    this.storeService.getKrogerProducts().subscribe((storeData) => this.storeData=storeData);
-    console.log(this.storeData)
+    if (this.storeService.storeName==='Kroger') {
+      this.storeService.getKrogerProducts().subscribe((storeData) => this.storeData=storeData);
+    } else if (this.storeService.storeName==='Aide') {
+      this.storeService.getAideProducts().subscribe((storeData) => this.storeData=storeData);
+    } else if (this.storeService.storeName==='Trader Joe\'s') {
+      this.storeService.getTraderJoeProducts().subscribe((storeData) => this.storeData=storeData);
+    } else {
+      alert("Error in processing store!");
+      this.router.navigate(['/store']);
+    }
+    // console.log(this.storeData)
   }
 }
