@@ -16,7 +16,7 @@ public class Inventory {
     private Integer serial_number;
     private String product_name;
     private String product_category;
-    private Double product_quantity;
+    private String product_quantity;
     private Double discount_price;
     private Double actual_price;
     private Date purchase_date;
@@ -46,11 +46,11 @@ public class Inventory {
         this.product_category = product_category;
     }
 
-    public Double getProduct_quantity() {
+    public String getProduct_quantity() {
         return product_quantity;
     }
 
-    public void setProduct_quantity(Double product_quantity) {
+    public void setProduct_quantity(String product_quantity) {
         this.product_quantity = product_quantity;
     }
 
