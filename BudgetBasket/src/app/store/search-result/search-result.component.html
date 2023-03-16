@@ -1,0 +1,133 @@
+<!-- Navbar -->
+<app-navbar></app-navbar>
+
+<main>
+    <div class="mt-4 ">
+        <div class="container">
+            <!-- row -->
+            <div class="row ">
+                <!-- col -->
+                <div class="col-12">
+                    <!-- breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="./">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Search</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{searchKeyword}}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section -->
+    <!-- section -->
+  <div class="mt-8 mb-lg-14 mb-8">
+    <!-- container -->
+    <div class="container">
+      <div class="row gx-10">
+        <section class="col-md-12">
+          <!-- card -->
+          <div class="card mb-4 bg-light border-0">
+            <!-- card body -->
+            <div class="card-body p-9">
+              <h2 class="mb-0 fs-1">"{{searchKeyword}}"</h2>
+            </div>
+          </div>
+          <!-- text -->
+          <div class="d-lg-flex justify-content-between align-items-center">
+            <div class="mb-3 mb-lg-0">
+              <p class="mb-0"> <span class="text-dark">{{searchResults.length}} </span> Products found </p>
+            </div>
+          </div>
+          <!-- row -->
+          <div class="row g-4  row-cols-1 mt-2">
+            <!-- col -->
+            <div class="col" *ngFor="let result of searchResults">
+              <!-- card -->
+              <div class="card card-product">
+                <div class="card-body">
+                  <div class=" row align-items-center">
+                    <div class="col-md-4 col-12">
+
+                      <div class="text-center position-relative ">
+                        <a href="#">
+                          <!-- img --><img [src]="'../assets/images/stores-logo/stores-logo-'+(result.searchedProduct.id%9=== 0 ? 9 : result.searchedProduct.id%9)+'.svg'"
+                            alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-12 row flex-grow-1">
+                      <!-- heading -->
+                      <!-- <div class="text-small mb-1"><a href="#!" class="text-decoration-none text-muted"><small>{{result.searchedProduct.category}}</small></a></div> -->
+                      <h2 class="fs-3"><a href="#" class="text-inherit text-decoration-none">{{result.searchedProduct.name}}</a>
+                      </h2>
+                      <div class="col-md-4" *ngIf="result.searchedKrogerProduct">
+                          <div class=" mt-6">
+                            <!-- price -->
+                            <div><span class="text-dark">${{result.searchedKrogerProduct.productPrice}}</span>
+                            </div>
+                            <!-- btn -->
+                            <div class="mt-3"><p class="fs-5"><b>Kroger</b></p></div>
+                            <!-- btn -->
+                            <div class="mt-2"><a href="#!" class="btn btn-primary ">
+    
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round" class="feather feather-shopping-bag me-2">
+                                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg> Add to Cart</a></div>
+                          </div>
+                      </div>
+                      <div class="col-md-4" *ngIf="result.searchedAideProduct">
+                        <div class=" mt-6">
+                          <!-- price -->
+                          <div><span class="text-dark">${{result.searchedAideProduct.productPrice}}</span>
+                          </div>
+                          <!-- btn -->
+                          <div class="mt-3"><p class="fs-5"><b>Aide</b></p></div>
+                          <!-- btn -->
+                          <div class="mt-2"><a href="#!" class="btn btn-primary ">
+  
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-shopping-bag me-2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                              </svg> Add to Cart</a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" *ngIf="result.searchedTraderJoeProduct">
+                        <div class=" mt-6">
+                          <!-- price -->
+                          <div><span class="text-dark">${{result.searchedTraderJoeProduct.productPrice}}</span>
+                          </div>
+                          <!-- btn -->
+                          <div class="mt-3"><p class="fs-5"><b>Trader Joe</b></p></div>
+                          <!-- btn -->
+                          <div class="mt-2"><a href="#!" class="btn btn-primary ">
+  
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-shopping-bag me-2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                              </svg> Add to Cart</a></div>
+                        </div>
+                    </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+</main>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SearchService } from 'src/app/services/search.service';
 import { UserManagementService } from 'src/app/services/user-management.service';
 import { User } from 'src/app/user-management/model/User';
 
@@ -10,18 +11,19 @@ import { User } from 'src/app/user-management/model/User';
 })
 export class NavbarComponent {
   myAuthUser!: User;
-  constructor(private userService: UserManagementService, private router: Router) {
-    this.myAuthUser = userService.getAuthUser();
-  }
+  public searchKeyword!: string;
 
-  ngOnInit(): void {
-    if(this.userService.getAuthUser()==null) {
-      this.router.navigate(['/']);
-    }
+  constructor(private userService: UserManagementService, private searchService: SearchService, private router: Router) {
+    this.myAuthUser = userService.getAuthUser();
   }
 
   logOut() {
     this.userService.signOutUser();
     this.router.navigate(['/']);
+  }
+
+  searchInputKeyword() {
+    this.searchService.searchKeyword = this.searchKeyword;
+    this.router.navigate(['/searchresult']);
   }
 }
