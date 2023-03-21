@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { FinmanagerRoutingModule } from './finmanager-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule } from '@angular/forms';
+import { OrderModelComponent } from './order/order.component';
 
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    OrderModelComponent
   ],
   imports: [
     CommonModule,
-    FinmanagerRoutingModule
+    FinmanagerRoutingModule,
+    FormsModule
   ]
 })
 export class FinmanagerModule { }
