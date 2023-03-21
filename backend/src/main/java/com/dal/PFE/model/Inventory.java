@@ -1,10 +1,7 @@
 package com.dal.PFE.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -13,76 +10,88 @@ public class Inventory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer serial_number;
-    private String product_name;
-    private String product_category;
-    private String product_quantity;
-    private Double discount_price;
-    private Double actual_price;
-    private Date purchase_date;
-    private Date expiry_date;
+    @Column(name = "product_id")
+    private int productId;
 
-    public Integer getSerial_number() {
-        return serial_number;
+    @Column(name = "product_name")
+    private String productName;
+    @Column(name = "product_category")
+    private String productCategory;
+    @Column(name = "product_quantity")
+    private String productQuantity;
+    @Column(name = "product_price")
+    private Double productPrice;
+    @Column(name = "purchase_date")
+    private Date purchaseDate;
+    @Column(name = "expiry_date")
+    private Date expiryDate;
+
+    public Inventory(int productId, String productName, String productCategory, String productQuantity, Double productPrice, Date purchaseDate, Date expiryDate) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productCategory = productCategory;
+        this.productQuantity = productQuantity;
+        this.productPrice = productPrice;
+        this.purchaseDate = purchaseDate;
+        this.expiryDate = expiryDate;
     }
 
-    public void setSerial_number(Integer serial_number) {
-        this.serial_number = serial_number;
+    public Inventory() {
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public String getProduct_category() {
-        return product_category;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct_category(String product_category) {
-        this.product_category = product_category;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getProduct_quantity() {
-        return product_quantity;
+    public String getProductCategory() {
+        return productCategory;
     }
 
-    public void setProduct_quantity(String product_quantity) {
-        this.product_quantity = product_quantity;
+    public void setProductCategory(String productCategory) {
+        this.productCategory = productCategory;
     }
 
-    public Double getDiscount_price() {
-        return discount_price;
+    public String getProductQuantity() {
+        return productQuantity;
     }
 
-    public void setDiscount_price(Double discount_price) {
-        this.discount_price = discount_price;
+    public void setProductQuantity(String productQuantity) {
+        this.productQuantity = productQuantity;
     }
 
-    public Double getActual_price() {
-        return actual_price;
+    public Double getProductPrice() {
+        return productPrice;
     }
 
-    public void setActual_price(Double actual_price) {
-        this.actual_price = actual_price;
+    public void setProductPrice(Double productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public Date getPurchase_date() {
-        return purchase_date;
+    public Date getPurchaseDate() {
+        return purchaseDate;
     }
 
-    public void setPurchase_date(Date purchase_date) {
-        this.purchase_date = purchase_date;
+    public void setPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = purchaseDate;
     }
 
-    public Date getExpiry_date() {
-        return expiry_date;
+    public Date getExpiryDate() {
+        return expiryDate;
     }
 
-    public void setExpiry_date(Date expiry_date) {
-        this.expiry_date = expiry_date;
+    public void setExpiryDate(Date expiryDate) {
+        this.expiryDate = expiryDate;
     }
 }
