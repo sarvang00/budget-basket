@@ -1,68 +1,79 @@
-<!-- Navigation -->
-<!-- <app-navbar-fin></app-navbar-fin> -->
+<!-- main -->
+<div>
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
 
-<!-- Main section -->
-<main>
-    <!-- section -->
+    <!-- Page Wrapper -->
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+        <app-sidebar></app-sidebar>
 
-    <div class="col-12 col-md-6 offset-lg-1 col-lg-4 order-lg-2 order-1">
-        <div class="mb-lg-9 mb-5">
-            <h1 class="mb-1 h2 fw-bold">Add Order Details</h1>
-            <p>We will track your available products using this data </p>
-        </div>
-        <!-- form -->
-        <form>
-            <div class="row g-3">
-                <!-- col -->
-                <div class="col">
-                    <input type="date"  class="form-control" id="order_date" [(ngModel)]="orderDate" name="orderDate">
-
+        <!-- Main section -->
+        <main class="main-content-wrapper">
+            <section class="container">
+                <!-- row -->
+                <div class="row ">
+                    <div class="col-12 col-md-6 offset-lg-1 col-lg-4 order-lg-2 order-1">
+                        <div class="mb-lg-9 mb-5">
+                            <h1 class="mb-1 h2 fw-bold">Add Order Details</h1>
+                            <p>We will track your available products using this data </p>
+                        </div>
+                        <!-- form -->
+                        <form>
+                            <div class="row g-3">
+                                <!-- col -->
+                                <div class="col">
+                                    <input type="date" class="form-control" id="order_date" [(ngModel)]="orderDate"
+                                        name="orderDate">
+        
+                                </div>
+                                <div class="col-12">
+                                    <!-- input -->
+                                    <input type="text" class="form-control" placeholder="Product Name" [(ngModel)]="productName"
+                                        aria-label="Product Name" name="productName">
+                                </div>
+                                <div class="col-12">
+                                    <select name="category" id="category" class="form-control" [(ngModel)]="category"
+                                        placeholder="Product Category">
+                                        <option class="form-control" value="">Select category</option>
+                                        <option class="form-control" value="dairy">Dairy</option>
+                                        <option class="form-control" value="bakery">Bakery</option>
+                                        <option class="form-control" value="vegetable">Vegetable</option>
+                                        <option class="form-control" value="fruites">Fruites</option>
+                                        <option class="form-control" value="beverages">Beverages</option>
+                                        <option class="form-control" value="beef">Beef</option>
+                                        <option class="form-control" value="chicken">Chicken</option>
+                                        <option class="form-control" value="fish">Fish</option>
+                                        <option class="form-control" value="pork">Pork</option>
+                                        <option class="form-control" value="turkey">Turkey</option>
+                                        <option class="form-control" value="salami">Salami</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <!-- input -->
+                                    <input type="text" class="form-control" [(ngModel)]="quantity" placeholder="Quantity"
+                                        aria-label="Quantity" name="quantity">
+                                </div>
+        
+                                <div class="col-12">
+                                    <!-- input -->
+                                    <input type="text" class="form-control" [(ngModel)]="actualPrice" placeholder="Actual Price"
+                                        aria-label="Actual Price" name="actualPrice">
+                                </div>
+                                <div class="col-12">
+                                    <!-- input -->
+                                    <input type="text" class="form-control" [(ngModel)]="discountPrice"
+                                        placeholder="Discount Price" aria-label="Discount Price" name="discountPrice">
+                                </div>
+        
+                                <div class="col-12 d-grid">
+                                    <button type="submit" class="btn btn-primary" (click)="handleOrder()">Add Product</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="col-12">
-                    <!-- input -->
-                    <input type="text" class="form-control" placeholder="Product Name" [(ngModel)]="productName"
-                        aria-label="Product Name" name="productName">
-                </div>
-                <div class="col-12">
-                    <select name="category" id="category" class="form-control" [(ngModel)]="category" placeholder="Product Category">
-                        <option class="form-control" value="">Select category</option>
-                        <option class="form-control" value="dairy">Dairy</option>
-                        <option class="form-control" value="bakery">Bakery</option>
-                        <option class="form-control" value="vegetable">Vegetable</option>
-                        <option class="form-control" value="fruites">Fruites</option>
-                        <option class="form-control" value="beverages">Beverages</option>
-                        <option class="form-control" value="beef">Beef</option>
-                        <option class="form-control" value="chicken">Chicken</option>
-                        <option class="form-control" value="fish">Fish</option>
-                        <option class="form-control" value="pork">Pork</option>
-                        <option class="form-control" value="turkey">Turkey</option>
-                        <option class="form-control" value="salami">Salami</option>
-                    </select>
-                </div>
-                <div class="col-12">
-                    <!-- input -->
-                    <input type="text" class="form-control" [(ngModel)]="quantity" placeholder="Quantity"
-                        aria-label="Quantity" name="quantity">
-                </div>
-
-                <div class="col-12">
-                    <!-- input -->
-                    <input type="text" class="form-control" [(ngModel)]="actualPrice" placeholder="Actual Price"
-                        aria-label="Actual Price" name="actualPrice">
-                </div>
-                <div class="col-12">
-                    <!-- input -->
-                    <input type="text" class="form-control" [(ngModel)]="discountPrice" placeholder="Discount Price"
-                        aria-label="Discount Price" name="discountPrice">
-                </div>
-                
-                <div class="col-12 d-grid"> 
-                    <button type="submit" class="btn btn-primary" (click)="handleOrder()">Add Product</button>
-                </div>
-            </div>
-        </form>
+            </section>
+        </main>
     </div>
-</main>
-
-<!-- Custom JS -->
-<!-- <script src="assets/js/vendors/password.js"></script> -->
+</div>
