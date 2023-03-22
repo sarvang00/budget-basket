@@ -22,7 +22,9 @@ export class OrderModelComponent {
 
   constructor(private FinManagerService: FinManagerService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.category=""
+  }
 
   handleOrder() {
 
