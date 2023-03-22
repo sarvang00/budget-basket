@@ -17,6 +17,12 @@ export class NavbarComponent {
     this.myAuthUser = userService.getAuthUser();
   }
 
+  ngOnInit() {
+    if(!this.myAuthUser.firstName) {
+      this.router.navigate(['/login']);
+    }
+  }
+
   logOut() {
     this.userService.signOutUser();
     this.router.navigate(['/']);

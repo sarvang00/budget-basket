@@ -14,7 +14,7 @@ export class LogInComponent {
   constructor(private userService: UserManagementService, private router: Router) {}
 
   ngOnInit(): void {
-    if(this.userService.getAuthUser()!=null) {
+    if(this.userService.getAuthUser()!=null && this.userService.getAuthUser().firstName) {
       this.router.navigate(['/store']);
     }
   }
