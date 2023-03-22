@@ -88,19 +88,6 @@
                 </div>
                 <div class="col-md-4 text-end d-none d-lg-block">
                     <div class="list-inline">
-                        <!-- <div class="list-inline-item">
-
-                            <a href="#!" class="text-muted" data-bs-toggle="modal" data-bs-target="#userModal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-user">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                                Hello, {{myAuthUser.firstName}} {{myAuthUser.lastName}}!
-                            </a>
-                            <button (click)="logOut()">Logout</button>
-                        </div> -->
                         <div class="list-inline-item">
                             <ul class="list-unstyled d-flex align-items-center mb-0 ms-5 ms-lg-0">
                                 <li class="dropdown ms-4">
@@ -133,7 +120,7 @@
                                             </li>
                                         </ul>
                                         <div class="border-top px-5 py-3">
-                                            <a href="#">Log Out</a>
+                                            <a (click)="logOut()" href="#">Log Out</a>
                                         </div>
                                     </div>
                                 </li>
