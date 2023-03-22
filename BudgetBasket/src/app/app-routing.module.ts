@@ -8,6 +8,7 @@ import { SearchResultComponent } from './store/search-result/search-result.compo
 import { LogInComponent } from './user-management/log-in/log-in.component';
 import { SignUpComponent } from './user-management/sign-up/sign-up.component';
 import { OrderModelComponent } from './finmanager/order/order.component';
+import { BillScanComponent } from './finmanager/bill-scan/bill-scan.component'
 
 const routes: Routes = [
   { path: '', component: LogInComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'istore', component: IndiStorePageComponent },
   { path: 'searchresult', component: SearchResultComponent },
   { path: 'order', component: OrderModelComponent },
+  { path: 'bill-scan', component: BillScanComponent },
   { path: '**', pathMatch: 'full', component: NotFoundComponent }
 ];
 
