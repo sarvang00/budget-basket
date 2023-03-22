@@ -18,7 +18,8 @@ public class InventoryController {
 
 
     @PostMapping({"/saveProductsInInventory"})
-    public Inventory saveProductsInInventory(@RequestBody Inventory inventory){
+    public Inventory saveProductsInInventory(@RequestBody Inventory inventory, @RequestBody int userId){
+        inventory.setUserId(userId);
         return inventoryService.saveProductsInInventory(inventory);
 
     }
