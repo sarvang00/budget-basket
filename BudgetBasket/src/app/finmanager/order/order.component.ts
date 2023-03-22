@@ -40,4 +40,8 @@ export class OrderModelComponent {
     
     this.FinManagerService.addOrder(order);
   }
+
+  scanBill(){
+    this.router.navigate(['/bill-scan']);
+  }
 }
