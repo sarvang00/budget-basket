@@ -22,13 +22,13 @@
 
                         <div class="dropdown-menu dropdown-menu-end p-0">
                             <div class="lh-1 px-5 py-4 border-bottom">
-                                <h5 class="mb-1 h6">BudgetBasket Admin</h5>
-                                <small>admindemo@email.com</small>
+                                <h5 class="mb-1 h6">{{myAuthUser.firstName}} {{myAuthUser.lastName}}</h5>
+                                <small>{{myAuthUser.email}}</small>
                             </div>
 
                             <ul class="list-unstyled px-2 py-3">
                                 <li>
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="./">
                                         Home
                                     </a>
                                 </li>
@@ -38,13 +38,13 @@
                                     </a>
                                 </li> -->
                                 <li>
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="./dashboard">
                                         Dashboard
                                     </a>
                                 </li>
                             </ul>
                             <div class="border-top px-5 py-3">
-                                <a href="#">Log Out</a>
+                                <a (click)="logOut()" href="#">Log Out</a>
                             </div>
                         </div>
                     </li>
