@@ -25,15 +25,20 @@ export class UserManagementService {
         if(user) {
           this.authUser = user;
           this.authUserSubject.next(this.authUser);
+          this.setCurrentUser(user);
         }
     }));
   }
 
   signOutUser() {
-    this.authUser = null;
+    localStorage.removeItem("currentUser");
   }
 
-  getAuthUser(): Observable<any> {
-    return this.authUserSubject.asObservable();
+  getAuthUser() {
+    return JSON.parse(localStorage.getItem("currentUser") || '{}');
+  }
+
+  setCurrentUser(user: any) {
+    localStorage.setItem("currentUser", JSON.stringify(user));
   }
 }
