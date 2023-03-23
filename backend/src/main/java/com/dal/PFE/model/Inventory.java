@@ -18,7 +18,7 @@ public class Inventory {
     @Column(name = "product_category")
     private String productCategory;
     @Column(name = "product_quantity")
-    private String productQuantity;
+    private int productQuantity;
     @Column(name = "product_price")
     private Double productPrice;
     @Column(name = "purchase_date")
@@ -29,7 +29,7 @@ public class Inventory {
     @Column(name = "user_email")
     private String userEmail;
 
-    public Inventory(int productId, String productName, String productCategory, String productQuantity, Double productPrice, Date purchaseDate, Date expiryDate,String userEmail) {
+    public Inventory(int productId, String productName, String productCategory, int productQuantity, Double productPrice, Date purchaseDate, Date expiryDate,String userEmail) {
         this.productId = productId;
         this.productName = productName;
         this.productCategory = productCategory;
@@ -67,11 +67,11 @@ public class Inventory {
         this.productCategory = productCategory;
     }
 
-    public String getProductQuantity() {
+    public int getProductQuantity() {
         return productQuantity;
     }
 
-    public void setProductQuantity(String productQuantity) {
+    public void setProductQuantity(int productQuantity) {
         this.productQuantity = productQuantity;
     }
 
