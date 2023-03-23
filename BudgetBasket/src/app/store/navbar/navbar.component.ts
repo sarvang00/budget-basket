@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { IstoreService } from 'src/app/services/istore.service';
 import { SearchService } from 'src/app/services/search.service';
 import { UserManagementService } from 'src/app/services/user-management.service';
 import { User } from 'src/app/user-management/model/User';
@@ -13,7 +14,7 @@ export class NavbarComponent {
   myAuthUser!: User;
   public searchKeyword!: string;
 
-  constructor(private userService: UserManagementService, private searchService: SearchService, private router: Router) {
+  constructor(private userService: UserManagementService, private searchService: SearchService, private storeService: IstoreService, private router: Router) {
     this.myAuthUser = userService.getAuthUser();
   }
 
@@ -31,5 +32,10 @@ export class NavbarComponent {
   searchInputKeyword() {
     this.searchService.searchKeyword = this.searchKeyword;
     this.router.navigate(['/searchresult']);
+  }
+
+  navigateToStore(storeName: string) {
+    this.storeService.storeName = storeName;
+    this.router.navigate(['/istore']);
   }
 }
