@@ -51,4 +51,8 @@ export class OrderModelComponent {
     this.finManagerService.addOrder(order);
     this.router.navigate(['/dashboard']);
   }
+
+  scanBill(){
+    this.router.navigate(['/bill-scan']);
+  }
 }

@@ -1,0 +1,40 @@
+<!-- Navigation -->
+<!-- <app-navbar-fin></app-navbar-fin> -->
+
+<!-- Main section -->
+<main>
+    <!-- section -->
+
+    <div class="col-12 col-md-6 offset-lg-1 col-lg-4 order-lg-2 order-1">
+        <div class="mb-lg-9 mb-5">
+            <h1 class="mb-1 h2 fw-bold">Add Order Details</h1>
+            <p>We will track your available products using this data </p>
+        </div>
+        <!-- form -->
+        <form>
+            <div class="row g-3">
+                <!-- col -->
+    
+                <div class="col-12">
+                    <!-- input -->
+                    <input type="file" class="form-control" (change)="onFileSelected($event)">
+                </div>
+                
+                <div class="col-12 d-grid"> 
+                    <button type="submit" class="btn btn-primary" (click)="onUpload()">Upload</button>
+                </div>
+
+                <div>
+<h2>products scanned: </h2><br>
+                    {{ products}}
+
+                </div>
+
+                
+            </div>
+        </form>
+    </div>
+</main>
+
+<!-- Custom JS -->
+<!-- <script src="assets/js/vendors/password.js"></script> -->

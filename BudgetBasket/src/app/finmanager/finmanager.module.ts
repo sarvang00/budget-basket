@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { OrderModelComponent } from './order/order.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { BillScanComponent } from './bill-scan/bill-scan.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     DashboardComponent,
     OrderModelComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    BillScanComponent
   ],
   imports: [
     CommonModule,
