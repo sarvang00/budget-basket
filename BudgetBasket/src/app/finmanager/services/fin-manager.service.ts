@@ -12,8 +12,10 @@ export class FinManagerService {
 }
 
    addOrder(orderDetails: OrderComponent){
-      console.log("hit to backedn")
-      this.httpClient.post('http://localhost:9090/user/registerUser', orderDetails).subscribe(data => console.log(data));
+      // console.log("hit to backedn");
+      // console.log(orderDetails);
+      // console.log("dbdbdbdb dbdb");
+      this.httpClient.post('http://localhost:9090/inventory/saveProductsInInventory', orderDetails).subscribe(data => console.log(data));
 
    }
 }

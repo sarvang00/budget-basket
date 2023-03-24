@@ -1,8 +1,8 @@
 export interface OrderComponent {
-    orderDate: Date;
+    purchaseDate: Date;
     productName: string;
-    category: string;
-    quantity: number;
-    actualPrice: number;
-    discountPrice: number;
+    productCategory: string;
+    productQuantity: number;
+    productPrice: number;
+    userEmail: string;
   }

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FinManagerService } from '../services/fin-manager.service';
 import { OrderComponent } from '../model/Order';
-import { v4 as uuidv4 } from 'uuid';
+import { User } from 'src/app/user-management/model/User';
+import { UserManagementService } from 'src/app/services/user-management.service';
 
 
 
@@ -13,32 +14,37 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class OrderModelComponent {
 
-  orderDate!: Date;
-  productName!: string;
-  category!: string;
-  quantity!: number;
-  actualPrice!: number;
-  discountPrice!: number;
+  myAuthUser!: User;
 
-  constructor(private FinManagerService: FinManagerService, private router: Router) {}
+  purchaseDate!: Date;
+  productName!: string;
+  productCategory!: string;
+  productQuantity!: number;
+  productPrice!: number;
+  userId!: number;
+
+  constructor(private userService: UserManagementService, private FinManagerService: FinManagerService, private router: Router) {
+    this.myAuthUser = userService.getAuthUser();
+  }
 
   ngOnInit(): void {
-    this.category=""
+    this.productCategory=""
   }
 
   handleOrder() {
 
-    console.log("I am reached")
+    // console.log("I am reached")
+    
     const order: OrderComponent = {
-      orderDate: this.orderDate,
+      purchaseDate: this.purchaseDate,
       productName: this.productName,
-      category: this.category,
-      quantity: this.quantity,
-      actualPrice: this.actualPrice,
-      discountPrice: this.discountPrice,
+      productCategory: this.productCategory,
+      productQuantity: this.productQuantity,
+      productPrice: this.productPrice,
+      userEmail: this.myAuthUser.email,
     };
 
-    
+    // console.log(order);
     
     this.FinManagerService.addOrder(order);
   }

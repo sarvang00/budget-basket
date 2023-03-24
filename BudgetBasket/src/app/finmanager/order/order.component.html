@@ -44,8 +44,7 @@
                                         <!-- col -->
                                         <div class="col">
                                             <input type="date" class="form-control" id="order_date"
-                                                [(ngModel)]="orderDate" name="orderDate">
-
+                                                [(ngModel)]="purchaseDate" name="purchaseDate">
                                         </div>
                                         <div class="col-12">
                                             <!-- input -->
@@ -53,13 +52,13 @@
                                                 [(ngModel)]="productName" aria-label="Product Name" name="productName">
                                         </div>
                                         <div class="col-12">
-                                            <select name="category" id="category" class="form-control"
-                                                [(ngModel)]="category" placeholder="Product Category">
+                                            <select name="productCategory" id="category" class="form-control"
+                                                [(ngModel)]="productCategory" placeholder="Product Category">
                                                 <option class="form-control" value="">Select category</option>
                                                 <option class="form-control" value="dairy">Dairy</option>
                                                 <option class="form-control" value="bakery">Bakery</option>
                                                 <option class="form-control" value="vegetable">Vegetable</option>
-                                                <option class="form-control" value="fruites">Fruites</option>
+                                                <option class="form-control" value="fruits">Fruits</option>
                                                 <option class="form-control" value="beverages">Beverages</option>
                                                 <option class="form-control" value="beef">Beef</option>
                                                 <option class="form-control" value="chicken">Chicken</option>
@@ -71,22 +70,15 @@
                                         </div>
                                         <div class="col-12">
                                             <!-- input -->
-                                            <input type="text" class="form-control" [(ngModel)]="quantity"
-                                                placeholder="Quantity" aria-label="Quantity" name="quantity">
+                                            <input type="text" class="form-control" [(ngModel)]="productQuantity"
+                                                placeholder="Quantity" aria-label="Quantity" name="productQuantity">
                                         </div>
 
                                         <div class="col-12">
                                             <!-- input -->
-                                            <input type="text" class="form-control" [(ngModel)]="actualPrice"
-                                                placeholder="Actual Price" aria-label="Actual Price" name="actualPrice">
+                                            <input type="text" class="form-control" [(ngModel)]="productPrice"
+                                                placeholder="Actual Price" aria-label="Actual Price" name="productPrice">
                                         </div>
-                                        <div class="col-12">
-                                            <!-- input -->
-                                            <input type="text" class="form-control" [(ngModel)]="discountPrice"
-                                                placeholder="Discount Price" aria-label="Discount Price"
-                                                name="discountPrice">
-                                        </div>
-
                                         <div class="col-12 d-grid">
                                             <button type="submit" class="btn btn-primary" (click)="handleOrder()">Add
                                                 Product</button>
