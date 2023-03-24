@@ -6,6 +6,8 @@ import com.dal.PFE.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("inventory")
@@ -19,5 +21,9 @@ public class InventoryController {
     public Inventory saveProductsInInventory(@RequestBody Inventory inventory){
         return inventoryService.saveProductsInInventory(inventory);
 
+    }
+
+    public List<Inventory> getInventoryFromEmail(String email){
+        return inventoryService.getInventoryFromEmail(email);
     }
 }

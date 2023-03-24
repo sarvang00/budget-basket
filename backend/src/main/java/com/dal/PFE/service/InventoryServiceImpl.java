@@ -5,6 +5,8 @@ import com.dal.PFE.model.Inventory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class InventoryServiceImpl implements InventoryService {
 
@@ -14,5 +16,10 @@ public class InventoryServiceImpl implements InventoryService {
     public Inventory saveProductsInInventory(Inventory inventory) {
 
         return inventoryDao.saveProductsInInventory(inventory);
+    }
+
+    @Override
+    public List<Inventory> getInventoryFromEmail(String email) {
+        return inventoryDao.getInventoryFromEmail(email);
     }
 }
