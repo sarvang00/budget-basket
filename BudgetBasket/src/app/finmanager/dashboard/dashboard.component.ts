@@ -26,5 +26,9 @@ export class DashboardComponent {
   addManualOrder() {
     this.router.navigate(['/order']);
   }
+
+  goToBillScanner() {
+    this.router.navigate(['/bill-scan']);
+  }
   
 }
