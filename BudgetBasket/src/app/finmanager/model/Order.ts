@@ -5,4 +5,5 @@ export interface OrderComponent {
     productQuantity: number;
     productPrice: number;
     userEmail: string;
+    expiryDate: Date;
   }

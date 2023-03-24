@@ -22,6 +22,7 @@ export class OrderModelComponent {
   productQuantity!: number;
   productPrice!: number;
   userId!: number;
+  expiryDate!: Date;
 
   constructor(private userService: UserManagementService, private finManagerService: FinManagerService, private router: Router) {
     this.myAuthUser = userService.getAuthUser();
@@ -42,10 +43,12 @@ export class OrderModelComponent {
       productQuantity: this.productQuantity,
       productPrice: this.productPrice,
       userEmail: this.myAuthUser.email,
+      expiryDate: new Date(this.purchaseDate)
     };
 
     // console.log(order);
     
     this.finManagerService.addOrder(order);
+    this.router.navigate(['/dashboard']);
   }
 }
