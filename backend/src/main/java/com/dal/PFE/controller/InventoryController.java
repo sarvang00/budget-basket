@@ -24,7 +24,7 @@ public class InventoryController {
     }
 
     @GetMapping({"/getInventory"})
-    public List<Inventory> getInventoryFromEmail(@RequestBody String email){
+    public List<Inventory> getInventoryFromEmail(@RequestParam(value="user",defaultValue = "") String email){
         return inventoryService.getInventoryFromEmail(email);
     }
 }
