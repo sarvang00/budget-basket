@@ -23,7 +23,7 @@ export class OrderModelComponent {
   productPrice!: number;
   userId!: number;
 
-  constructor(private userService: UserManagementService, private FinManagerService: FinManagerService, private router: Router) {
+  constructor(private userService: UserManagementService, private finManagerService: FinManagerService, private router: Router) {
     this.myAuthUser = userService.getAuthUser();
   }
 
@@ -46,6 +46,6 @@ export class OrderModelComponent {
 
     // console.log(order);
     
-    this.FinManagerService.addOrder(order);
+    this.finManagerService.addOrder(order);
   }
 }
