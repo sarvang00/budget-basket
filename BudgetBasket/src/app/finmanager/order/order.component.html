@@ -1,0 +1,95 @@
+<!-- main -->
+<div>
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
+
+    <!-- Page Wrapper -->
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+        <app-sidebar></app-sidebar>
+
+        <!-- main wrapper -->
+        <main class="main-content-wrapper">
+            <section class="container">
+                <!-- row -->
+                <div class="row mb-8">
+                    <div class="col-md-12">
+                        <!-- card -->
+                        <div class="card bg-light border-0 rounded-4"
+                            style="background-image: url(../assets/images/slider/slider-image-1.jpg); background-repeat: no-repeat; background-size: cover; background-position: right;">
+                            <div class="card-body p-lg-12">
+                                <h1>BudgetBasket Dashboard
+                                </h1>
+                                <p>We help you save more. Welcome to your dashboard.</p>
+                                <a href="./store" class="btn btn-primary">
+                                    Go to store
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- row -->
+                <div class="row ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 mb-6">
+                        <div class="card h-100 card-lg">
+                            <!-- heading -->
+                            <div class="p-6">
+                                <h3 class="mb-0 fs-5">Add Order Details</h3>
+                            </div>
+                            <div class="card-body p-0">
+                                <!-- form -->
+                                <form>
+                                    <div class="row g-3">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <input type="date" class="form-control" id="order_date"
+                                                [(ngModel)]="purchaseDate" name="purchaseDate">
+                                        </div>
+                                        <div class="col-12">
+                                            <!-- input -->
+                                            <input type="text" class="form-control" placeholder="Product Name"
+                                                [(ngModel)]="productName" aria-label="Product Name" name="productName">
+                                        </div>
+                                        <div class="col-12">
+                                            <select name="productCategory" id="category" class="form-control"
+                                                [(ngModel)]="productCategory" placeholder="Product Category">
+                                                <option class="form-control" value="">Select category</option>
+                                                <option class="form-control" value="dairy">Dairy</option>
+                                                <option class="form-control" value="bakery">Bakery</option>
+                                                <option class="form-control" value="vegetable">Vegetable</option>
+                                                <option class="form-control" value="fruits">Fruits</option>
+                                                <option class="form-control" value="beverages">Beverages</option>
+                                                <option class="form-control" value="beef">Beef</option>
+                                                <option class="form-control" value="chicken">Chicken</option>
+                                                <option class="form-control" value="fish">Fish</option>
+                                                <option class="form-control" value="pork">Pork</option>
+                                                <option class="form-control" value="turkey">Turkey</option>
+                                                <option class="form-control" value="salami">Salami</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <!-- input -->
+                                            <input type="text" class="form-control" [(ngModel)]="productQuantity"
+                                                placeholder="Quantity" aria-label="Quantity" name="productQuantity">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <!-- input -->
+                                            <input type="text" class="form-control" [(ngModel)]="productPrice"
+                                                placeholder="Actual Price" aria-label="Actual Price" name="productPrice">
+                                        </div>
+                                        <div class="col-12 d-grid">
+                                            <button type="submit" class="btn btn-primary" (click)="handleOrder()">Add
+                                                Product</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<!-- main -->
+<div>
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
+
+    <!-- Page Wrapper -->
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+        <app-sidebar></app-sidebar>
+
+        <!-- Main section -->
+        <main class="main-content-wrapper">
+            <!-- section -->
+            <section class="container">
+                <!-- row -->
+                <div class="row mb-8">
+                    <div class="col-md-12">
+                        <!-- card -->
+                        <div class="card bg-light border-0 rounded-4"
+                            style="background-image: url(../assets/images/slider/slider-image-1.jpg); background-repeat: no-repeat; background-size: cover; background-position: right;">
+                            <div class="card-body p-lg-12">
+                                <h1>BudgetBasket Dashboard
+                                </h1>
+                                <p>We help you save more. Welcome to your dashboard.</p>
+                                <a href="./store" class="btn btn-primary">
+                                    Go to store
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 mb-6 order-1">
+                    <div class="mb-lg-9 mb-5">
+                        <h1 class="mb-1 h2 fw-bold">Add Order Details</h1>
+                        <p>We will track your available products using this data </p>
+                    </div>
+                    <!-- form -->
+                    <form>
+                        <div class="row g-3">
+                            <!-- col -->
+
+                            <div class="col-12">
+                                <!-- input -->
+                                <input type="file" class="form-control" (change)="onFileSelected($event)">
+                            </div>
+
+                            <div class="col-12 d-grid">
+                                <button type="submit" class="btn btn-primary" (click)="onUpload()">Upload</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div *ngIf="products[0]">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 mb-6">
+                        <div class="card h-100 card-lg">
+                            <!-- heading -->
+                            <div class="p-6">
+                                <h3 class="mb-0 fs-5">Products Scanned</h3>
+                            </div>
+                            <div class="card-body p-0">
+                                <!-- table -->
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-borderless text-nowrap table-hover">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th scope="col">Product Name</th>
+                                                <th scope="col">Product Category</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Purchase Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let product of products">
+                                                <td>{{product.productName}}</td>
+                                                <td>{{product.productCategory}}</td>
+                                                <td>${{product.productPrice}}</td>
+                                                <td>{{product.purchaseDate| date:'MM-dd-yyyy'}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
