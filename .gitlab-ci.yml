@@ -1,0 +1,24 @@
+stages:
+  - test
+  - merge
+
+test_backend:
+  stage: test
+  image: maven:latest
+  script:
+    - cd backend
+    - mvn test
+  only:
+    - dev
+    - backend-dev
+
+merge_to_dev:
+  stage: merge
+  script:
+    - git checkout dev
+    - git merge --no-ff $CI_COMMIT_SHA
+    - git push origin dev
+  only:
+    - backend-dev
+  dependencies:
+    - test_backend
