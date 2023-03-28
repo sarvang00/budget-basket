@@ -39,12 +39,10 @@
                     <form>
                         <div class="row g-3">
                             <!-- col -->
-
                             <div class="col-12">
                                 <!-- input -->
                                 <input type="file" class="form-control" (change)="onFileSelected($event)">
                             </div>
-
                             <div class="col-12 d-grid">
                                 <button type="submit" class="btn btn-primary" (click)="onUpload()">Upload</button>
                             </div>
@@ -74,12 +72,17 @@
                                         <tbody>
                                             <tr *ngFor="let product of products">
                                                 <td>{{product.productName}}</td>
-                                                <td>{{product.productCategory}}</td>
+                                                <td>
+                                                    <select [(ngModel)]="product.productCategory" required>
+                                                        <option *ngFor="let category of categories" [value]="category.categoryName" >{{ category.categoryName }}</option>
+                                                    </select>
+                                                </td>
                                                 <td>${{product.productPrice}}</td>
                                                 <td>{{product.purchaseDate| date:'MM-dd-yyyy'}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <button (click)="onBillSubmit()" class="btn btn-success">Submit</button>
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-export interface OrderComponent {
+export interface Order {
     purchaseDate: Date;
     productName: string;
     productCategory: string;

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FinManagerService } from '../services/fin-manager.service';
-import { OrderComponent } from '../model/Order';
+import { Order } from '../model/Order';
 import { User } from 'src/app/user-management/model/User';
 import { UserManagementService } from 'src/app/services/user-management.service';
 
@@ -36,7 +36,7 @@ export class OrderModelComponent {
 
     // console.log("I am reached")
     
-    const order: OrderComponent = {
+    const order: Order = {
       purchaseDate: this.purchaseDate,
       productName: this.productName,
       productCategory: this.productCategory,

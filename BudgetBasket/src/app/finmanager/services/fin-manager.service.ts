@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 
-import { OrderComponent } from '../model/Order';
+import { Order } from '../model/Order';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class FinManagerService {
 
   constructor(private httpClient : HttpClient) {}
 
-   addOrder(orderDetails: OrderComponent){
+   addOrder(orderDetails: Order){
       // console.log("hit to backedn");
       // console.log(orderDetails);
       // console.log("dbdbdbdb dbdb");
@@ -24,5 +24,9 @@ export class FinManagerService {
     return this.httpClient.get(userProductsUrl).pipe(tap((orderResults: any) => {
       this.ordersSubject.next(orderResults);
     }));
+   }
+
+   addBillOrders(billOrders: Order[]) {
+    this.httpClient.post('http://localhost:9090/inventory/saveScannedProductsInInventory', billOrders).subscribe();
    }
 }
