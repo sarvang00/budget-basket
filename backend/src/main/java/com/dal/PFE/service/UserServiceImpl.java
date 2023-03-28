@@ -41,4 +41,9 @@ public class UserServiceImpl implements com.dal.PFE.service.UserService {
     public void updateUser(User user) {
         userDao.updateUser(user);
     }
+
+    @Override
+    public User findUserByEmail(String email) {
+        return userDao.findUserByEmail(email);
+    }
 }
