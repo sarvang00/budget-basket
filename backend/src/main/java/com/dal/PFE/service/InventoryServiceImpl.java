@@ -22,4 +22,9 @@ public class InventoryServiceImpl implements InventoryService {
     public List<Inventory> getInventoryFromEmail(String email) {
         return inventoryDao.getInventoryFromEmail(email);
     }
+
+    @Override
+    public Inventory saveScaneedProductsInInventory(List<Inventory> scannedProducts) {
+        return null;
+    }
 }

@@ -23,6 +23,20 @@ public class InventoryController {
 
     }
 
+    @PostMapping({"/saveScannedProductsInInventory"})
+    public Inventory saveScannedProductsInInventory(@RequestBody List<Inventory> scannedProducts){
+        for (int i = 0; i < scannedProducts.size(); i++) {
+
+            System.out.println(scannedProducts.get(i).toString());
+
+            System.out.println(scannedProducts.get(i).getProductName());
+
+        }
+
+        return null;
+
+    }
+
     @GetMapping({"/getInventory"})
     public List<Inventory> getInventoryFromEmail(@RequestParam(value="user",defaultValue = "") String email){
         return inventoryService.getInventoryFromEmail(email);

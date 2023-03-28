@@ -8,4 +8,6 @@ public interface InventoryService {
     Inventory saveProductsInInventory(Inventory inventory);
 
     List<Inventory> getInventoryFromEmail(String email);
+
+    Inventory saveScaneedProductsInInventory(List<Inventory> scannedProducts);
 }
