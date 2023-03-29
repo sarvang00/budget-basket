@@ -10,4 +10,6 @@ public interface InventoryDao {
     Inventory saveProductsInInventory(Inventory inventory);
 
     List<Inventory> getInventoryFromEmail(String email);
+
+    List<Inventory> setExpiryDates(List<Inventory> scannedProducts);
 }

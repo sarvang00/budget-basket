@@ -10,4 +10,7 @@ public interface InventoryService {
     List<Inventory> getInventoryFromEmail(String email);
 
     Inventory saveScaneedProductsInInventory(List<Inventory> scannedProducts);
+
+
+    List<Inventory> setExpiryDates(List<Inventory> scannedProducts);
 }

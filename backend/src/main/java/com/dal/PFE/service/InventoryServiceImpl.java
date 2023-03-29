@@ -27,4 +27,10 @@ public class InventoryServiceImpl implements InventoryService {
     public Inventory saveScaneedProductsInInventory(List<Inventory> scannedProducts) {
         return null;
     }
+
+    @Override
+    public List<Inventory> setExpiryDates(List<Inventory> scannedProducts) {
+
+        return inventoryDao.setExpiryDates(scannedProducts);
+    }
 }
