@@ -16,10 +16,6 @@ export class DashboardComponent {
 
   constructor(private userService: UserManagementService, private finManagerService: FinManagerService, private router: Router) {
     this.myAuthUser = userService.getAuthUser();
-  }
-
-  ngOnInit() {
-    // console.log("Yaha se")
     this.finManagerService.getOrders(this.myAuthUser.email).subscribe((userOrders) => this.userOrders=userOrders);
   }
 
