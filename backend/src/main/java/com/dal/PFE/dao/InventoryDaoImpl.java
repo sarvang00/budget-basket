@@ -17,6 +17,7 @@ public class InventoryDaoImpl implements InventoryDao {
 
     @Override
     public Inventory saveProductsInInventory(Inventory inventory) {
+
         return inventoryRepository.save(inventory);
     }
 
@@ -61,12 +62,16 @@ public class InventoryDaoImpl implements InventoryDao {
                     product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), 7));
                     break;
                 default:
-                    // Unknown category, set expiry date to null
-                    product.setExpiryDate(null);
+                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), 6));
                     break;
             }
         }
         return scannedProducts;
+    }
+
+    @Override
+    public void saveScannedProductsInInventory(List<Inventory> scannedProducts) {
+        inventoryRepository.saveAll(scannedProducts);
     }
 
 }

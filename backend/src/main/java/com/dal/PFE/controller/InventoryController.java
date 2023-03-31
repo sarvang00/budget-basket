@@ -24,7 +24,7 @@ public class InventoryController {
     }
 
     @PostMapping({"/saveScannedProductsInInventory"})
-    public Inventory saveScannedProductsInInventory(@RequestBody List<Inventory> scannedProducts){
+    public void saveScannedProductsInInventory(@RequestBody List<Inventory> scannedProducts){
 
         List<Inventory> scannedProductsWithExpiryDates = inventoryService.setExpiryDates(scannedProducts);
 
@@ -37,7 +37,8 @@ public class InventoryController {
 
         }
 
-        return null;
+        inventoryService.saveScannedProductsInInventory(scannedProductsWithExpiryDates);
+
 
     }
 
