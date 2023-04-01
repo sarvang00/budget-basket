@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'store', component: HomepageComponent },
   { path: 'istore', component: IndiStorePageComponent },
-  { path: 'searchresult', component: SearchResultComponent },
+  { path: 'searchresult/:searchKeyword', component: SearchResultComponent },
   { path: 'order', component: OrderModelComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'bill-scan', component: BillScanComponent },

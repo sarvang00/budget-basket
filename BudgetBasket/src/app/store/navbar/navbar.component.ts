@@ -31,7 +31,7 @@ export class NavbarComponent {
 
   searchInputKeyword() {
     this.searchService.searchKeyword = this.searchKeyword;
-    this.router.navigate(['/searchresult']);
+    this.router.navigate(['/searchresult', this.searchKeyword ]);
   }
 
   navigateToStore(storeName: string) {
