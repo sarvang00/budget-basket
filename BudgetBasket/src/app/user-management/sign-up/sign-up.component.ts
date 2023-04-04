@@ -4,13 +4,15 @@ import { UserAddress } from '../model/UserAddress';
 import { v4 as uuidv4 } from 'uuid';
 import { UserManagementService } from '../../services/user-management.service';
 import { Router } from '@angular/router';
+import { OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
   userFirstName!: string;
   userLastName!: string;
   userEmail!: string;
@@ -22,9 +24,19 @@ export class SignUpComponent {
   addressPostalCode!: string;
   addressCountry!: string;
 
+  regexValidations = {
+  emailValidation: '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/',
+    phoneValidation: '^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$'
+  };
+
+
+
   constructor(private userService: UserManagementService, private router: Router) {}
 
   ngOnInit(): void {}
+
+
+
 
   handleSignUp() {
     const userAddress: UserAddress = {
@@ -34,7 +46,7 @@ export class SignUpComponent {
       addressPostalCode: this.addressPostalCode,
       addressCountry: this.addressCountry,
       addressContactNumber: this.phoneNumber,
-    }
+  }
 
     const newUser: User = {
       firstName: this.userFirstName,
