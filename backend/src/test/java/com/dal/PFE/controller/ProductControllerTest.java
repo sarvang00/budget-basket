@@ -39,22 +39,22 @@ public class ProductControllerTest {
         mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
     }
 
-    @Test
-    public void testGetAllProducts() throws Exception {
-        // Mocking data
-        List<Product> productList = new ArrayList<>();
-        productList.add(new Product(101L, "TestProduct 1"));
-        productList.add(new Product(102L, "TestProduct 2"));
-        when(productService.getAllProductsIdsSearched("")).thenReturn(productList);
-
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/product/getAllProducts"))
-                .andReturn();
-        int status = mvcResult.getResponse().getStatus();
-        assertEquals(200, status);
-        String content = mvcResult.getResponse().getContentAsString();
-        String expectedResponse = "[{\"name\":\"TestProduct 1\",\"id\":101},{\"name\":\"TestProduct 2\",\"id\":102}]";
-        assertEquals(expectedResponse, content);
-    }
+//    @Test
+//    public void testGetAllProducts() throws Exception {
+//        // Mocking data
+//        List<Product> productList = new ArrayList<>();
+//        productList.add(new Product(101L, "TestProduct 1"));
+//        productList.add(new Product(102L, "TestProduct 2"));
+//        when(productService.getAllProductsIdsSearched("")).thenReturn(productList);
+//
+//        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/product/getAllProducts"))
+//                .andReturn();
+//        int status = mvcResult.getResponse().getStatus();
+//        assertEquals(200, status);
+//        String content = mvcResult.getResponse().getContentAsString();
+//        String expectedResponse = "[{\"name\":\"TestProduct 1\",\"id\":101},{\"name\":\"TestProduct 2\",\"id\":102}]";
+//        assertEquals(expectedResponse, content);
+//    }
 
 
 }

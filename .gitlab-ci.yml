@@ -1,0 +1,35 @@
+stages:
+  - build
+  - test
+
+build-backend:
+  stage: build
+  image: maven:latest
+  script:
+    - cd backend
+    - mvn clean package
+  only:
+    - dev
+    - backend-dev
+
+build-frontend:
+  stage: build
+  image: node:latest
+  script:
+    - cd BudgetBasket
+    - npm install
+    - npm run build
+  only:
+    - dev
+    - frontend-dev
+
+test_backend:
+  stage: test
+  image: maven:latest
+  script:
+    - cd backend
+    - mvn test
+  only:
+    - dev
+    - backend-dev
+
