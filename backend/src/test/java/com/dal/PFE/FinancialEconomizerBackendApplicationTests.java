@@ -3,11 +3,7 @@ package com.dal.PFE;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest(classes = FinancialEconomizerBackendApplication.class)
+@SpringBootTest
 class FinancialEconomizerBackendApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
 
 }
