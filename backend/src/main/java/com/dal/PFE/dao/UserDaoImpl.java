@@ -37,4 +37,9 @@ public class UserDaoImpl implements com.dal.PFE.dao.UserDao {
     public User findUserByEmail(String email) {
         return userRepository.findUserByEmail(email);
     }
+
+    @Override
+    public boolean alreadyExist(User user) {
+        return userRepository.findUserByEmail(user.getEmail()) == null;
+    }
 }
