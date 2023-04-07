@@ -6,6 +6,8 @@ stages:
 build-backend:
   stage: build
   image: maven:latest
+  tags:
+    - gcp
   script:
     - cd backend
     - mvn clean package -DskipTests
@@ -19,6 +21,8 @@ build-backend:
 build-frontend:
   stage: build
   image: node:latest
+  tags:
+    - gcp
   script:
     - cd BudgetBasket
     - npm install
@@ -33,6 +37,8 @@ build-frontend:
 test_backend:
   stage: test
   image: maven:latest
+  tags:
+    - gcp
   script:
     - cd backend
     - mvn test
@@ -43,6 +49,8 @@ test_backend:
 deploy:
   stage: deploy
   image: alpine:latest
+  tags:
+    - gcp
   before_script:
     - apk update && apk add openssh-client
     - eval $(ssh-agent -s)
