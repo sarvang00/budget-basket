@@ -32,4 +32,9 @@ public class UserDaoImpl implements com.dal.PFE.dao.UserDao {
     public void updateUser(User user) {
         userRepository.save(user);
     }
+
+    @Override
+    public User findUserByEmail(String email) {
+        return userRepository.findUserByEmail(email);
+    }
 }

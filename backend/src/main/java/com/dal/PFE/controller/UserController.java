@@ -3,6 +3,7 @@ package com.dal.PFE.controller;
 import com.dal.PFE.model.User;
 import com.dal.PFE.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,10 @@ public class UserController {
 
     @PostMapping("/registerUser")
     public void registerUser(@RequestBody User user){
-        System.out.println(user.getFirstName() +" , "+user.getEmail());
+        System.out.println(user.getFirstName() + " , " + user.getEmail());
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
         userService.registerUser(user);
     }
 
@@ -37,8 +41,19 @@ public class UserController {
     @PostMapping("/loginValidate")
     public User loginValidate(@RequestBody Map<String, String> loginRequest) {
 
-        System.out.println(userService.validateUser(loginRequest.get("email"), loginRequest.get("password")).getFirstName());
-        return userService.validateUser(loginRequest.get("email"), loginRequest.get("password"));
+        User user = userService.findUserByEmail(loginRequest.get("email"));
+
+        if (user != null) {
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String encodedPassword = user.getPassword();
+
+            if(passwordEncoder.matches(loginRequest.get("password"), encodedPassword)){
+                System.out.println("Credentials match ");
+                return user;
+            }
+        }
+        System.out.println("Credentials did not match ");
+        return null;
     }
 
 

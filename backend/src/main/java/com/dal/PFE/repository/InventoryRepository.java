@@ -10,4 +10,6 @@ public interface InventoryRepository extends JpaRepository<Inventory,Integer> {
 
     @Query("from Inventory as i where i.userEmail=?1")
     List<Inventory> getInventoryFromEmail(String email);
+
+
 }
