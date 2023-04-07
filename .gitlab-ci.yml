@@ -2,7 +2,7 @@ stages:
   - build
   - test
 
-build:
+build-backend:
   stage: build
   image: maven:latest
   script:
@@ -11,6 +11,17 @@ build:
   only:
     - dev
     - backend-dev
+
+build-frontend:
+  stage: build
+  image: node:latest
+  script:
+    - cd BudgetBasket
+    - npm install
+    - npm run build
+  only:
+    - dev
+    - frontend-dev
 
 test_backend:
   stage: test
@@ -21,3 +32,4 @@ test_backend:
   only:
     - dev
     - backend-dev
+
