@@ -22,7 +22,7 @@ build-frontend:
   script:
     - cd BudgetBasket
     - npm install
-    - npm run build -- --prod
+    - npm run build --prod
   artifacts:
     paths:
       - BudgetBasket/dist/
