@@ -5,7 +5,7 @@ stages:
 
 build-backend:
   stage: build
-  image: maven:3.8-openjdk-17
+  image: maven:3-openjdk-17
   tags:
     - gcp
   script:
@@ -36,7 +36,7 @@ build-frontend:
 
 test_backend:
   stage: test
-  image: maven:3.8-openjdk-17
+  image: maven:3-openjdk-17
   tags:
     - gcp
   script:
