@@ -98,16 +98,5 @@ public class Kroger {
         this.productAvailability = productAvailability;
     }
 
-    @Override
-    public String toString() {
-        return "Kroger{" +
-                "martProdId=" + martProdId +
-                ", productId=" + productId +
-                ", productPrice=" + productPrice +
-                ", priceQuantity=" + priceQuantity +
-                ", unit='" + unit + '\'' +
-                ", productDescription='" + productDescription + '\'' +
-                ", productAvailability=" + productAvailability +
-                '}';
-    }
+
 }

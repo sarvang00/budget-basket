@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("inventory")
 public class InventoryController {
 
@@ -24,11 +24,11 @@ public class InventoryController {
     }
 
     @PostMapping({"/saveScannedProductsInInventory"})
-    public Inventory saveScannedProductsInInventory(@RequestBody List<Inventory> scannedProducts){
+    public void saveScannedProductsInInventory(@RequestBody List<Inventory> scannedProducts){
 
-        List<Inventory> scannedProductsWithExpiryDates = inventoryService.setExpiryDates(scannedProducts);
+        List<Inventory> expiryDatesProducts = inventoryService.setExpiryDates(scannedProducts);
 
-        for (int i = 0; i < scannedProductsWithExpiryDates.size(); i++) {
+        for (int i = 0; i < expiryDatesProducts.size(); i++) {
 
             System.out.println(scannedProducts.get(i).getProductName()+":");
 
@@ -37,7 +37,8 @@ public class InventoryController {
 
         }
 
-        return null;
+        inventoryService.saveScannedProductsInInventory(expiryDatesProducts);
+
 
     }
 

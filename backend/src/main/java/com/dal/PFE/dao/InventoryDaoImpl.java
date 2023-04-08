@@ -17,6 +17,7 @@ public class InventoryDaoImpl implements InventoryDao {
 
     @Override
     public Inventory saveProductsInInventory(Inventory inventory) {
+
         return inventoryRepository.save(inventory);
     }
 
@@ -35,7 +36,9 @@ public class InventoryDaoImpl implements InventoryDao {
                 case "vegetable":
                 case "fruits":
                 case "beverages":
-                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), 3));
+                    //EXPIRY_PERIOD = 3 hard coded
+                    int EXPIRY_PERIOD = 3;
+                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), EXPIRY_PERIOD));
                     break;
                 case "beef":
                 case "chicken":
@@ -43,6 +46,7 @@ public class InventoryDaoImpl implements InventoryDao {
                 case "pork":
                 case "turkey":
                 case "salami":
+
                     product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), 5));
                     break;
                 case "baking supplies":
@@ -61,12 +65,16 @@ public class InventoryDaoImpl implements InventoryDao {
                     product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), 7));
                     break;
                 default:
-                    // Unknown category, set expiry date to null
-                    product.setExpiryDate(null);
+                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), 6));
                     break;
             }
         }
         return scannedProducts;
+    }
+
+    @Override
+    public void saveScannedProductsInInventory(List<Inventory> scannedProducts) {
+        inventoryRepository.saveAll(scannedProducts);
     }
 
 }

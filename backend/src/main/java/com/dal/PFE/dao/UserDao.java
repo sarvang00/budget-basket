@@ -16,4 +16,6 @@ public interface UserDao {
     void updateUser(User user);
 
     User findUserByEmail(String email);
+
+    boolean alreadyExist(User user);
 }

@@ -46,4 +46,9 @@ public class UserServiceImpl implements com.dal.PFE.service.UserService {
     public User findUserByEmail(String email) {
         return userDao.findUserByEmail(email);
     }
+
+    @Override
+    public boolean alreadyExist(User user) {
+        return userDao.alreadyExist(user);
+    }
 }
