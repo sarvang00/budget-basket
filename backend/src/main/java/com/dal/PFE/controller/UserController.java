@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("user")
 public class UserController {
 
@@ -18,17 +18,21 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/registerUser")
-    public void registerUser(@RequestBody User user){
-        System.out.println(user.getFirstName() + " , " + user.getEmail());
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String encodedPassword = passwordEncoder.encode(user.getPassword());
-        user.setPassword(encodedPassword);
-        userService.registerUser(user);
+    public boolean registerUser(@RequestBody User user){
+        if (userService.alreadyExist(user)){
+            return false;
+        }else {
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String encodedPassword = passwordEncoder.encode(user.getPassword());
+            user.setPassword(encodedPassword);
+            userService.registerUser(user);
+            return true;
+        }
+
     }
 
     @PutMapping("/updateUser")
     public void updateUser(@RequestBody User user){
-        System.out.println(user.getFirstName() +" , "+user.getEmail() + " - updated");
         userService.updateUser(user);
     }
 
@@ -48,11 +52,9 @@ public class UserController {
             String encodedPassword = user.getPassword();
 
             if(passwordEncoder.matches(loginRequest.get("password"), encodedPassword)){
-                System.out.println("Credentials match ");
                 return user;
             }
         }
-        System.out.println("Credentials did not match ");
         return null;
     }
 

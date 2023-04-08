@@ -6,7 +6,8 @@ import { Category } from '../model/category';
   providedIn: 'root'
 })
 export class CategoryService {
-  private categoryUrl = 'http://localhost:9090/category/getAllCategory';
+  public publicIP: String = "34.152.13.63";
+  private categoryUrl = 'http://'+this.publicIP+':9090/category/getAllCategory';
 
   constructor(private http: HttpClient) { }
 

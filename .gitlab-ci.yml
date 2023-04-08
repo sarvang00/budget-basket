@@ -5,7 +5,7 @@ stages:
 
 build-backend:
   stage: build
-  image: maven:latest
+  image: maven:3-openjdk-17
   script:
     - cd backend
     - mvn clean package -DskipTests
@@ -32,7 +32,7 @@ build-frontend:
 
 test_backend:
   stage: test
-  image: maven:latest
+  image: maven:3-openjdk-17
   script:
     - cd backend
     - mvn test
@@ -42,13 +42,8 @@ test_backend:
 
 deploy:
   stage: deploy
-  image: alpine:latest
-  before_script:
-    - apk update && apk add openssh-client
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | ssh-add -
-    - mkdir -p ~/.ssh && chmod 700 ~/.ssh
-    - ssh-keyscan $SERVER_HOSTNAME >> ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
+  tags:
+    - gcp
   script:
     - scp frontend/dist/* $SERVER_USERNAME@$SERVER_HOSTNAME:/home/$SERVER_USERNAME/group15/frontend/
     - scp backend/target/*.jar $SERVER_USERNAME@$SERVER_HOSTNAME:/home/$SERVER_USERNAME/group15/backend/

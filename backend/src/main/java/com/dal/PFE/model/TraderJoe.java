@@ -101,16 +101,5 @@ public class TraderJoe {
         this.productAvailability = productAvailability;
     }
 
-    @Override
-    public String toString() {
-        return "TraderJoe{" +
-                "martProdId=" + martProdId +
-                ", productId=" + productId +
-                ", productPrice=" + productPrice +
-                ", priceQuantity=" + priceQuantity +
-                ", unit='" + unit + '\'' +
-                ", productDescription='" + productDescription + '\'' +
-                ", productAvailability=" + productAvailability +
-                '}';
-    }
+
 }
