@@ -47,11 +47,14 @@ public class ProductControllerTest {
         productList.add(new Product(102, "TestProduct 2"));
         when(productService.getAllProductsIdsSearched("")).thenReturn(productList);
 
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/product/getAllProducts"))
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/product/getAllProductsIdsSearched"))
                 .andReturn();
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
+
+        System.out.println("Response status: " + status);
+        System.out.println("Response content: " + content);
         String expectedResponse = "[{\"name\":\"TestProduct 1\",\"id\":101},{\"name\":\"TestProduct 2\",\"id\":102}]";
         assertEquals(expectedResponse, content);
     }
