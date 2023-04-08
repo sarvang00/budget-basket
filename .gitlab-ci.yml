@@ -5,8 +5,6 @@ stages:
 
 build-backend:
   stage: build
-  tags:
-  - gcp-runner
   image: maven:3-openjdk-17
   script:
     - cd backend
@@ -22,7 +20,7 @@ build-frontend:
   stage: build
   tags:
   - gcp-runner
-  image: node:latest
+  image: node:lts
   script:
     - cd BudgetBasket
     - npm install
