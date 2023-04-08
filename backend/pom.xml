@@ -14,7 +14,7 @@
 	<name>Financial-Economizer-Backend</name>
 	<description>Financial Economizer Backend </description>
 	<properties>
-		<java.version>19</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
