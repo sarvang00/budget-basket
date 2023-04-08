@@ -18,15 +18,16 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/registerUser")
-    public boolean registerUser(@RequestBody User user){
-        if (userService.alreadyExist(user)){
-            return false;
-        }else {
+    public boolean registerNewUser(@RequestBody User user){
+        if (!userService.alreadyExist(user)){
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
             String encodedPassword = passwordEncoder.encode(user.getPassword());
             user.setPassword(encodedPassword);
             userService.registerUser(user);
             return true;
+        }else {
+
+            return false;
         }
 
     }

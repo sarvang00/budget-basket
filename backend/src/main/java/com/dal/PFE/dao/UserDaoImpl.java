@@ -40,6 +40,6 @@ public class UserDaoImpl implements com.dal.PFE.dao.UserDao {
 
     @Override
     public boolean alreadyExist(User user) {
-        return userRepository.findUserByEmail(user.getEmail()) == null;
+        return userRepository.findUserByEmail(user.getEmail()) != null;
     }
 }
