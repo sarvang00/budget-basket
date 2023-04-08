@@ -52,14 +52,7 @@ public class Product {
         this.category = category;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "product_id=" + product_id +
-                ", productName='" + productName + '\'' +
-                ", category=" + category +
-                '}';
-    }
+
 }
 
 

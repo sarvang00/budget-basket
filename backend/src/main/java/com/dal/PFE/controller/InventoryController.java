@@ -26,9 +26,9 @@ public class InventoryController {
     @PostMapping({"/saveScannedProductsInInventory"})
     public void saveScannedProductsInInventory(@RequestBody List<Inventory> scannedProducts){
 
-        List<Inventory> scannedProductsWithExpiryDates = inventoryService.setExpiryDates(scannedProducts);
+        List<Inventory> expiryDatesProducts = inventoryService.setExpiryDates(scannedProducts);
 
-        for (int i = 0; i < scannedProductsWithExpiryDates.size(); i++) {
+        for (int i = 0; i < expiryDatesProducts.size(); i++) {
 
             System.out.println(scannedProducts.get(i).getProductName()+":");
 
@@ -37,7 +37,7 @@ public class InventoryController {
 
         }
 
-        inventoryService.saveScannedProductsInInventory(scannedProductsWithExpiryDates);
+        inventoryService.saveScannedProductsInInventory(expiryDatesProducts);
 
 
     }

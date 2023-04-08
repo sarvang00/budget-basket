@@ -30,7 +30,6 @@ public class ProductDaoImpl implements ProductDao{
     public List<ProductAndMart> getAllSearchedProducts(String keyword) {
 
         List<Product> searchedProductList = productRepository.findByProductNameContainingIgnoreCaseOrCategory_CategoryNameContainingIgnoreCase(keyword, keyword);
-        System.out.println("size of searchedProductList : " + searchedProductList.size());
 
         List<ProductAndMart> searchResultList = new ArrayList<>();
         for (Product product : searchedProductList) {
@@ -108,14 +107,5 @@ public class ProductDaoImpl implements ProductDao{
         return productRepository.findAll();
     }
 
-    public List<Mart> findAllProductsByIDFromAllStores(int id){
-        List<Mart> allSearchedProducts = new ArrayList<>();
-        List<Mart> allSearchedProductsFromKroger = new ArrayList<>();
-        List<Mart> allSearchedProductsFromAide = new ArrayList<>();
-        List<Mart> allSearchedProductsFromTraderJoe = new ArrayList<>();
-
-
-        return  allSearchedProducts;
-    }
 
 }
