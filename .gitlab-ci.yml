@@ -5,6 +5,8 @@ stages:
 
 build-backend:
   stage: build
+  tags:
+  - gcp-2
   image: maven:3-openjdk-17
   script:
     - cd backend
@@ -18,6 +20,8 @@ build-backend:
 
 build-frontend:
   stage: build
+  tags:
+  - gcp-2
   image: node:latest
   script:
     - cd BudgetBasket
@@ -32,6 +36,8 @@ build-frontend:
 
 test_backend:
   stage: test
+  tags:
+  - gcp-2
   image: maven:3-openjdk-17
   script:
     - cd backend
@@ -42,6 +48,8 @@ test_backend:
 
 deploy:
   stage: deploy
+  tags:
+  - gcp-2
   script:
     - scp frontend/dist/* $SERVER_USERNAME@$SERVER_HOSTNAME:/home/$SERVER_USERNAME/group15/frontend/
     - scp backend/target/*.jar $SERVER_USERNAME@$SERVER_HOSTNAME:/home/$SERVER_USERNAME/group15/backend/
