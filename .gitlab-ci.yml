@@ -44,11 +44,6 @@ deploy:
   stage: deploy
   tags:
     - gcp
-  before_script:
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | ssh-add -
-    - mkdir -p ~/.ssh && chmod 700 ~/.ssh
-    - ssh-keyscan $SERVER_HOSTNAME >> ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
   script:
     - scp frontend/dist/* $SERVER_USERNAME@$SERVER_HOSTNAME:/home/$SERVER_USERNAME/group15/frontend/
     - scp backend/target/*.jar $SERVER_USERNAME@$SERVER_HOSTNAME:/home/$SERVER_USERNAME/group15/backend/
