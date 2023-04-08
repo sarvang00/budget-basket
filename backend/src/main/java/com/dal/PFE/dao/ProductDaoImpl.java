@@ -27,6 +27,10 @@ public class ProductDaoImpl implements ProductDao{
     @Autowired
     TraderJoeRepository traderJoeRepository;
 
+    public ProductDaoImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
     //Refactored Code
     public List<ProductAndMart> getAllSearchedProducts(String keyword) {
 

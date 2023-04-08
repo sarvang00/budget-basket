@@ -40,7 +40,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void testGetAllProducts() throws Exception {
+    public void testGetAllProductsIdsSearched() throws Exception {
         // Mocking data
         List<Product> productList = new ArrayList<>();
         productList.add(new Product(101, "TestProduct 1"));
@@ -53,9 +53,8 @@ public class ProductControllerTest {
         assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
 
-        System.out.println("Response status: " + status);
-        System.out.println("Response content: " + content);
         String expectedResponse = "[{\"name\":\"TestProduct 1\",\"id\":101},{\"name\":\"TestProduct 2\",\"id\":102}]";
+        //String expectedResponse = "[{\"id\":101,\"name\":\"TestProduct 1\"},{\"id\":102,\"name\":\"TestProduct 2\"}]";
         assertEquals(expectedResponse, content);
     }
 

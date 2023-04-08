@@ -27,7 +27,7 @@ public class ProductDaoTest {
     @BeforeEach
     public void setUp() {
         productRepository = mock(ProductRepository.class);
-        productDao = new ProductDaoImpl();
+        productDao = new ProductDaoImpl(productRepository);
     }
 
     @Test
