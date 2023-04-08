@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="855bb4b1-0b66-4026-a662-c230f2f6b9a9" name="Changes" comment="Refactored ProductDaoImpl to fix 2 long statement implementation smells in getAllSearchedProducts method">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/dal/PFE/dao/InventoryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/dal/PFE/dao/InventoryDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/dal/PFE/dao/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/dal/PFE/dao/ProductDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/dal/PFE/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/dal/PFE/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/dal/PFE/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/dal/PFE/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/controller/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/controller/ProductControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/dao/ProductDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/dao/ProductDaoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/dao/ProductDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/dao/ProductDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/model/ProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/model/ProductTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/service/InventoryServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/service/InventoryServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680291454727</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactored ProductDaoImpl to fix 2 long statement implementation smells in getAllSearchedProducts method">
+      <created>1680924418036</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680924418036</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

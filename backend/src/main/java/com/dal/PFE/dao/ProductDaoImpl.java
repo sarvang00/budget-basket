@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,20 +34,20 @@ public class ProductDaoImpl implements ProductDao{
 
         List<ProductAndMart> searchResultList = new ArrayList<>();
         for (Product product : searchedProductList) {
-            Long productId = product.getId();
+            int productId = product.getId();
             System.out.print("prod id : " + productId + "\n");
 
             ProductAndMart tempProductAndMart = new ProductAndMart();
             tempProductAndMart.setSearchedProduct(product);
             System.out.println(tempProductAndMart.getSearchedProduct().toString());
 
-            List<Kroger> krogerProducts = krogerRepository.findTheProductsByIdFromKroger(productId.intValue());
+            List<Kroger> krogerProducts = krogerRepository.findTheProductsByIdFromKroger(productId);
             tempProductAndMart.setSearchedKrogerProduct(krogerProducts.isEmpty() ? null : krogerProducts.get(0));
 
-            List<Aide> aideProducts = aideRepository.findTheProductsByIdFromAide(productId.intValue());
+            List<Aide> aideProducts = aideRepository.findTheProductsByIdFromAide(productId);
             tempProductAndMart.setSearchedAideProduct(aideProducts.isEmpty() ? null : aideProducts.get(0));
 
-            List<TraderJoe> traderJoeProducts = traderJoeRepository.findTheProductsByIdFromTraderJoe(productId.intValue());
+            List<TraderJoe> traderJoeProducts = traderJoeRepository.findTheProductsByIdFromTraderJoe(productId);
             tempProductAndMart.setSearchedTraderJoeProduct(traderJoeProducts.isEmpty() ? null : traderJoeProducts.get(0));
 
             searchResultList.add(tempProductAndMart);

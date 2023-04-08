@@ -28,6 +28,7 @@ public class Category {
     @JsonIgnore
     private List<Product> productList = new ArrayList<>();
 
+
     public Long getCategoryId() {
         return categoryId;
     }
