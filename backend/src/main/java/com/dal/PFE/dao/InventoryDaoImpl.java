@@ -33,7 +33,7 @@ public class InventoryDaoImpl implements InventoryDao {
                 case "dairy":
                 case "bakery":
                 case "vegetable":
-                case "fruites":
+                case "fruits":
                 case "beverages":
                     product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), 3));
                     break;
