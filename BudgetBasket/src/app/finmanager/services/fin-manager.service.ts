@@ -27,6 +27,13 @@ export class FinManagerService {
     }));
    }
 
+   getExpiringToday(userEmail: String): Observable<any>  {
+    var expiringToday = "http://"+this.publicIP+":9090/inventory/getExpiringToday?user="+userEmail;
+    return this.httpClient.get(expiringToday).pipe(tap((expiringResults: any) => {
+      this.ordersSubject.next(expiringResults);
+    }));    
+   }
+
    addBillOrders(billOrders: Order[]) {
     this.httpClient.post('http://'+this.publicIP+':9090/inventory/saveScannedProductsInInventory', billOrders).subscribe();
    }

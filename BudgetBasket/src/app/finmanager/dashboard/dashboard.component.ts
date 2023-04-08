@@ -13,10 +13,12 @@ export class DashboardComponent {
 
   myAuthUser!: User;
   public userOrders!: any;
+  public expiringToday!: any;
 
   constructor(private userService: UserManagementService, private finManagerService: FinManagerService, private router: Router) {
     this.myAuthUser = userService.getAuthUser();
     this.finManagerService.getOrders(this.myAuthUser.email).subscribe((userOrders) => this.userOrders=userOrders);
+    this.finManagerService.getExpiringToday(this.myAuthUser.email).subscribe((expiringToday) => this.expiringToday=expiringToday);
   }
 
   addManualOrder() {
