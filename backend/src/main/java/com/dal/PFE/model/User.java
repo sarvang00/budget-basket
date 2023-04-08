@@ -123,18 +123,5 @@ public class User {
         this.userAddresses = userAddresses;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + userId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                ", userAddresses=" + userAddresses +
-                '}';
-    }
+
 }

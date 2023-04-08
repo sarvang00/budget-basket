@@ -111,17 +111,5 @@ public class UserAddress {
         this.user = user;
     }
 
-    @Override
-    public String toString() {
-        return "UserAddress{" +
-                "addressId=" + addressId +
-                ", addressLine1='" + addressLine1 + '\'' +
-                ", addressLine2='" + addressLine2 + '\'' +
-                ", addressCity='" + addressCity + '\'' +
-                ", addressPostalCode='" + addressPostalCode + '\'' +
-                ", addressCountry='" + addressCountry + '\'' +
-                ", addressContactNo='" + addressContactNo + '\'' +
-                ", user=" + user +
-                '}';
-    }
+
 }
