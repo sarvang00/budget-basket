@@ -6,8 +6,6 @@ stages:
 build-backend:
   stage: build
   image: maven:3-openjdk-17
-  tags:
-    - gcp
   script:
     - cd backend
     - mvn clean package -DskipTests
@@ -37,8 +35,6 @@ build-frontend:
 test_backend:
   stage: test
   image: maven:3-openjdk-17
-  tags:
-    - gcp
   script:
     - cd backend
     - mvn test
