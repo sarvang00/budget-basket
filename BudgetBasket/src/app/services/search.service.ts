@@ -8,12 +8,13 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 export class SearchService {
   public searchKeyword!: String;
   public resultSubject: BehaviorSubject<any> = new BehaviorSubject(null);
+  public publicIP: String = "34.152.13.63";
 
   constructor(private httpClient : HttpClient) { }
 
   getSearchProducts(): Observable<any> {
     // console.log("B4:", this.searchKeyword);
-    var searchUrl = "http://localhost:9090/product/getAllSearchedProducts?keyword="+this.searchKeyword;
+    var searchUrl = "http://"+this.publicIP+":9090/product/getAllSearchedProducts?keyword="+this.searchKeyword;
     return this.httpClient.get(searchUrl).pipe(tap((searchResults: any) => {
       // console.log("Janam dekhlo: ", searchResults);
       this.resultSubject.next(searchResults);
