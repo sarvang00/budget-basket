@@ -47,8 +47,8 @@ deploy:
   tags:
   - gcp-to-prod
   script:
-    - cp frontend/dist/* /home/$SERVER_USERNAME/group15/frontend/
-    - cp backend/target/*.jar /home/$SERVER_USERNAME/group15/backend/
+    - sudo cp frontend/dist/* /home/$SERVER_USERNAME/group15/frontend/
+    - sudo cp backend/target/*.jar /home/$SERVER_USERNAME/group15/backend/
     - sudo systemctl disable group15.service && sudo systemctl stop group15.service && sudo mv /home/$SERVER_USERNAME/group15/frontend/* /var/www/html/ && sudo mv /home/$SERVER_USERNAME/group15/backend/*.jar /opt/group15/group15.jar && sudo systemctl start group15.service && sudo systemctl enable group15.service
   environment:
     name: production

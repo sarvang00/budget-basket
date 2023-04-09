@@ -140,25 +140,6 @@
 
     <nav class="navbar navbar-expand-lg navbar-light navbar-default py-0 py-lg-4">
         <div class="container px-0 px-md-3">
-            <div class="dropdown me-3 d-none d-lg-block">
-                <button class="btn btn-primary px-6 " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <span class="me-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-grid">
-                            <rect x="3" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="14" width="7" height="7"></rect>
-                            <rect x="3" y="14" width="7" height="7"></rect>
-                        </svg></span> All Stores
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" (click)="navigateToStore('Kroger')" href="#">Kroger</a></li>
-                    <li><a class="dropdown-item" (click)="navigateToStore('Aide')" href="#">Aide</a></li>
-                    <li><a class="dropdown-item" (click)="navigateToStore('Trader Joe\'s')" href="#">Trader Joe's</a></li>
-                </ul>
-            </div>
             <div class="offcanvas offcanvas-start p-4 p-lg-0" id="navbar-default">
                 <div class="d-flex justify-content-between align-items-center mb-2 d-block d-lg-none">
                     <a href="#"><img src="../assets/images/logo/freshcart-logo.svg" alt="BudgetBasket"></a>
@@ -182,32 +163,6 @@
                             </span>
                         </div>
                     </form>
-                </div>
-                <div class="d-block d-lg-none mb-4">
-                    <a class="btn btn-primary w-100 d-flex justify-content-center align-items-center"
-                        data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-                        aria-controls="collapseExample">
-                        <span class="me-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg></span> All Stores
-                    </a>
-                    <div class="collapse mt-2" id="collapseExample">
-                        <div class="card card-body">
-                            <ul class="mb-0 list-unstyled">
-                                <li><a class="dropdown-item" (click)="navigateToStore('Kroger')" href="#">Kroger</a>
-                                </li>
-                                <li><a class="dropdown-item" (click)="navigateToStore('Aide')" href="#">Aide</a>
-                                </li>
-                                <li><a class="dropdown-item" (click)="navigateToStore('Trader Joe\'s')" href="#">Trader Joe's</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

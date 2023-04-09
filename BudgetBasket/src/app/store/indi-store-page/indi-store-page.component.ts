@@ -12,11 +12,11 @@ export class IndiStorePageComponent {
   public storeData!: any;
   constructor(private storeService: IstoreService, private router: Router) {
     this.storeName = this.storeService.storeName;
-    if (this.storeService.storeName==='Kroger') {
+    if (this.storeService.storeName==='Walmart') {
       this.storeService.getKrogerProducts().subscribe((storeData) => this.storeData=storeData);
-    } else if (this.storeService.storeName==='Aide') {
+    } else if (this.storeService.storeName==='Atlantic Superstore') {
       this.storeService.getAideProducts().subscribe((storeData) => this.storeData=storeData);
-    } else if (this.storeService.storeName==='Trader Joe\'s') {
+    } else if (this.storeService.storeName==='Sobeys') {
       this.storeService.getTraderJoeProducts().subscribe((storeData) => this.storeData=storeData);
     } else {
       alert("Error in processing store!");
