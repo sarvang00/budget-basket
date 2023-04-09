@@ -12,6 +12,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.test.web.servlet.ResultMatcher;
+import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
@@ -34,16 +37,32 @@ public class CategoryControllerTest {
 
 
     @Test
-    public void testingGetCategoryByName() throws Exception {
+    public void testGetCategoryByName() throws Exception {
+        // Arrange
+        String categoryName = "TestCategory";
         Category category = new Category();
-        category.setCategoryName("TestCategory");
+        category.setCategoryName(categoryName);
+        when(categoryService.getCategoryByName(categoryName)).thenReturn(category);
 
-        when(categoryService.getCategoryByName("TestCategory")).thenReturn(category);
+        String endpoint = "/category/getCategoryByName";
+        String paramName = "categoryName";
+        String paramValue = categoryName;
+        MediaType contentType = MediaType.APPLICATION_JSON;
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/category/getCategoryByName")
-                        .param("categoryName", "TestCategory")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.categoryName").value("TestCategory"));
+        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get(endpoint);
+        requestBuilder.param(paramName, paramValue);
+        requestBuilder.contentType(contentType);
+
+        // Act
+        ResultActions resultActions = mockMvc.perform(requestBuilder);
+
+        // Assert
+        ResultMatcher statusMatcher = MockMvcResultMatchers.status().isOk();
+        ResultMatcher categoryNameMatcher = MockMvcResultMatchers.jsonPath("$.categoryName").value(categoryName);
+        resultActions.andExpect(statusMatcher);
+        resultActions.andExpect(categoryNameMatcher);
     }
+
+
 }
+
