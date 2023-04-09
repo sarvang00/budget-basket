@@ -52,20 +52,8 @@
                                                 [(ngModel)]="productName" aria-label="Product Name" name="productName">
                                         </div>
                                         <div class="col-12">
-                                            <select name="productCategory" id="category" class="form-control"
-                                                [(ngModel)]="productCategory" placeholder="Product Category">
-                                                <option class="form-control" value="">Select category</option>
-                                                <option class="form-control" value="dairy">Dairy</option>
-                                                <option class="form-control" value="bakery">Bakery</option>
-                                                <option class="form-control" value="vegetable">Vegetable</option>
-                                                <option class="form-control" value="fruits">Fruits</option>
-                                                <option class="form-control" value="beverages">Beverages</option>
-                                                <option class="form-control" value="beef">Beef</option>
-                                                <option class="form-control" value="chicken">Chicken</option>
-                                                <option class="form-control" value="fish">Fish</option>
-                                                <option class="form-control" value="pork">Pork</option>
-                                                <option class="form-control" value="turkey">Turkey</option>
-                                                <option class="form-control" value="salami">Salami</option>
+                                            <select name="productCategory" id="category" class="form-control" [(ngModel)]="productCategory" required>
+                                                <option *ngFor="let category of categories" [value]="category.categoryName" [selected]="category.categoryName==='Others'">{{ category.categoryName }}</option>
                                             </select>
                                         </div>
                                         <div class="col-12">

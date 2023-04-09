@@ -4,6 +4,7 @@ import { FinManagerService } from '../services/fin-manager.service';
 import { Order } from '../model/Order';
 import { User } from 'src/app/user-management/model/User';
 import { UserManagementService } from 'src/app/services/user-management.service';
+import { CategoryService } from '../services/category.service';
 
 
 
@@ -24,13 +25,16 @@ export class OrderModelComponent {
   userId!: number;
   expiryDate!: Date;
 
-  constructor(private userService: UserManagementService, private finManagerService: FinManagerService, private router: Router) {
+  categories: any = [];
+
+  constructor(private userService: UserManagementService, private finManagerService: FinManagerService, private categoryService: CategoryService, private router: Router) {
     this.myAuthUser = userService.getAuthUser();
+    categoryService.getCategories().subscribe({
+      next: value => this.categories = value,
+    });
   }
 
-  ngOnInit(): void {
-    this.productCategory=""
-  }
+  ngOnInit(): void {}
 
   handleOrder() {
 
