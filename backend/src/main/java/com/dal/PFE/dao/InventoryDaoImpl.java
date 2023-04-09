@@ -82,4 +82,9 @@ public class InventoryDaoImpl implements InventoryDao {
         inventoryRepository.saveAll(scannedProducts);
     }
 
+    @Override
+    public List<Inventory> getExpiryInventoryFromEmail(String email) {
+        return inventoryRepository.getExpiryInventoryFromEmail(email);
+    }
+
 }

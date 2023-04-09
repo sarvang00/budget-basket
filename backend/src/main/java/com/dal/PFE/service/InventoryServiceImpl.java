@@ -39,4 +39,9 @@ public class InventoryServiceImpl implements InventoryService {
 
         return inventoryDao.setExpiryDates(scannedProducts);
     }
+
+    @Override
+    public List<Inventory> getExpiryInventoryFromEmail(String email) {
+        return inventoryDao.getExpiryInventoryFromEmail(email);
+    }
 }
