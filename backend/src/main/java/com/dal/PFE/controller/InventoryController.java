@@ -5,6 +5,8 @@ import com.dal.PFE.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -18,7 +20,8 @@ public class InventoryController {
 
     @PostMapping({"/saveProductsInInventory"})
     public Inventory saveProductsInInventory(@RequestBody Inventory inventory){
-        return inventoryService.saveProductsInInventory(inventory);
+        List<Inventory> expiryDatesProducts = inventoryService.setExpiryDates(Arrays.asList(inventory));
+        return inventoryService.saveProductsInInventory(expiryDatesProducts.get(0));
 
     }
 

@@ -37,7 +37,7 @@ class UserControllerTest {
 
         when(userService.alreadyExist(user)).thenReturn(false);
 
-        boolean result = userController.registerUser(user);
+        boolean result = userController.registerNewUser(user);
         assertTrue(result);
     }
 
