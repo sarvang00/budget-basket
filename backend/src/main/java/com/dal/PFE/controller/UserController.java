@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("user")
 public class UserController {
 
@@ -22,7 +22,6 @@ public class UserController {
         if (userService.alreadyExist(user)){
             return false;
         }else {
-            System.out.println(user.getFirstName() + " , " + user.getEmail());
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
             String encodedPassword = passwordEncoder.encode(user.getPassword());
             user.setPassword(encodedPassword);
@@ -34,7 +33,6 @@ public class UserController {
 
     @PutMapping("/updateUser")
     public void updateUser(@RequestBody User user){
-        System.out.println(user.getFirstName() +" , "+user.getEmail() + " - updated");
         userService.updateUser(user);
     }
 
@@ -54,11 +52,9 @@ public class UserController {
             String encodedPassword = user.getPassword();
 
             if(passwordEncoder.matches(loginRequest.get("password"), encodedPassword)){
-                System.out.println("Credentials match ");
                 return user;
             }
         }
-        System.out.println("Credentials did not match ");
         return null;
     }
 

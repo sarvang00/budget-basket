@@ -1,6 +1,5 @@
 package com.dal.PFE.controller;
 
-import com.dal.PFE.dao.InventoryDao;
 import com.dal.PFE.model.Inventory;
 import com.dal.PFE.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("inventory")
 public class InventoryController {
 
@@ -26,9 +25,9 @@ public class InventoryController {
     @PostMapping({"/saveScannedProductsInInventory"})
     public void saveScannedProductsInInventory(@RequestBody List<Inventory> scannedProducts){
 
-        List<Inventory> scannedProductsWithExpiryDates = inventoryService.setExpiryDates(scannedProducts);
+        List<Inventory> expiryDatesProducts = inventoryService.setExpiryDates(scannedProducts);
 
-        for (int i = 0; i < scannedProductsWithExpiryDates.size(); i++) {
+        for (int i = 0; i < expiryDatesProducts.size(); i++) {
 
             System.out.println(scannedProducts.get(i).getProductName()+":");
 
@@ -37,7 +36,7 @@ public class InventoryController {
 
         }
 
-        inventoryService.saveScannedProductsInInventory(scannedProductsWithExpiryDates);
+        inventoryService.saveScannedProductsInInventory(expiryDatesProducts);
 
 
     }
@@ -45,5 +44,10 @@ public class InventoryController {
     @GetMapping({"/getInventory"})
     public List<Inventory> getInventoryFromEmail(@RequestParam(value="user",defaultValue = "") String email){
         return inventoryService.getInventoryFromEmail(email);
+    }
+
+    @GetMapping({"/getExpiryInventory"})
+    public List<Inventory> getExpiryInventoryFromEmail(@RequestParam(value="user",defaultValue = "") String email){
+        return inventoryService.getExpiryInventoryFromEmail(email);
     }
 }

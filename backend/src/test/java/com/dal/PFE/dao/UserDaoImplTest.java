@@ -1,81 +1,132 @@
-
 package com.dal.PFE.dao;
 
+import com.dal.PFE.FinancialEconomizerBackendApplication;
 import com.dal.PFE.model.User;
 import com.dal.PFE.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.*;
-@SpringBootTest
-class UserDaoImplTest {
 
-    @Mock
+@SpringBootTest(classes = FinancialEconomizerBackendApplication.class)
+
+public class UserDaoImplTest {
+    @Autowired
+    private UserDao userDao;
+
+    @Autowired
     private UserRepository userRepository;
 
-    @InjectMocks
-    private UserDaoImpl userDao;
-
     @BeforeEach
-    void setUp() {
-        MockitoAnnotations.initMocks(this);
+    public void setUp() {
+        userRepository.deleteAll();
     }
 
     @Test
-    void testRegisterUser() {
+    public void testRegisterUser() {
         User user = new User();
+        user.setEmail("user1@gmail.com");
+        user.setPassword("abc");
         userDao.registerUser(user);
-        verify(userRepository, times(1)).save(user);
+
+        List<User> users = userRepository.findAll();
+        assertEquals(1, users.size());
+
+        User savedUser = users.get(0);
+        assertEquals("user1@gmail.com", savedUser.getEmail());
+        assertEquals("abc", savedUser.getPassword());
     }
 
     @Test
-    void testGetUsers() {
-        List<User> userList = new ArrayList<>();
-        when(userRepository.findAll()).thenReturn(userList);
+    public void testGetUsers() {
+        User user1 = new User();
+        user1.setEmail("user1@gmail.com");
+        user1.setPassword("abc");
+        userDao.registerUser(user1);
 
-        List<User> result = userDao.getUsers();
-        assertEquals(userList, result);
-        verify(userRepository, times(1)).findAll();
+        User user2 = new User();
+        user2.setEmail("user2@gmail.com");
+        user2.setPassword("def");
+        userDao.registerUser(user2);
+
+        List<User> users = userDao.getUsers();
+        assertEquals(2, users.size());
+
+        User savedUser1 = users.get(0);
+        assertEquals("user1@gmail.com", savedUser1.getEmail());
+        assertEquals("abc", savedUser1.getPassword());
+
+        User savedUser2 = users.get(1);
+        assertEquals("user2@gmail.com", savedUser2.getEmail());
+        assertEquals("def", savedUser2.getPassword());
     }
 
     @Test
-    void testValidateUser() {
-        String email = "test@example.com";
-        String password = "password";
-        User expectedUser = new User();
-        when(userRepository.findUserByEmailPassword(email, password)).thenReturn(expectedUser);
-
-        User result = userDao.validateUser(email, password);
-        assertEquals(expectedUser, result);
-        verify(userRepository, times(1)).findUserByEmailPassword(email, password);
-    }
-
-    @Test
-    void testUpdateUser() {
+    public void testValidateUser() {
         User user = new User();
-        userDao.updateUser(user);
-        verify(userRepository, times(1)).save(user);
+        user.setEmail("user1@gmail.com");
+        user.setPassword("abc");
+        userDao.registerUser(user);
+
+        User foundUser = userDao.validateUser("user1@gmail.com", "abc");
+        assertNotNull(foundUser);
+        assertEquals("user1@gmail.com", foundUser.getEmail());
+        assertEquals("abc", foundUser.getPassword());
     }
 
     @Test
-    void testFindUserByEmail() {
-        String email = "test@example.com";
-        User expectedUser = new User();
-        when(userRepository.findUserByEmail(email)).thenReturn(expectedUser);
+    public void testUpdateUser() {
+        User user = new User();
+        user.setEmail("user1@gmail.com");
+        user.setPassword("abc");
+        userDao.registerUser(user);
 
-        User result = userDao.findUserByEmail(email);
-        assertEquals(expectedUser, result);
-        verify(userRepository, times(1)).findUserByEmail(email);
+        user.setPassword("abcdef");
+        userDao.updateUser(user);
+
+        User updatedUser = userRepository.findById(user.getUserId()).orElse(null);
+        assertNotNull(updatedUser);
+        assertEquals("user1@gmail.com", updatedUser.getEmail());
+        assertEquals("abcdef", updatedUser.getPassword());
     }
+
+    @Test
+    public void testFindUserByEmail() {
+        User user = new User();
+        user.setEmail("user1@gmail.com");
+        user.setPassword("abc");
+        userDao.registerUser(user);
+
+        User foundUser = userDao.findUserByEmail("user1@gmail.com");
+        assertNotNull(foundUser);
+        assertEquals("user1@gmail.com", foundUser.getEmail());
+        assertEquals("abc", foundUser.getPassword());
+    }
+
+   /* @Test
+    public void testAlreadyExist() {
+        User user = new User();
+        user.setEmail("user1@gmail.com");
+        user.setPassword("abc");
+        userDao.registerUser(user);
+
+        User existingUser = new User();
+        existingUser.setEmail("user1@gmail.com");
+        existingUser.setPassword("abc");
+
+        boolean alreadyExists = userDao.alreadyExist(existingUser);
+        assertTrue(alreadyExists);
+
+        User newUniqueUser = new User();
+        newUniqueUser.setEmail("uniqueuser@gmail.com");
+        newUniqueUser.setPassword("xyz");
+
+        boolean doesNotExist = userDao.alreadyExist(newUniqueUser);
+        assertFalse(doesNotExist);
+    }*/
 
 }

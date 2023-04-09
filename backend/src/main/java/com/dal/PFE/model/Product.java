@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 public class Product {
     @Id
     @Column(name = "product_id")
-    private Long product_id;
+    private int product_id;
     @Column(name = "product_name")
     private String productName;
 
@@ -19,7 +19,7 @@ public class Product {
     private Category category;
 
 
-    public Product(long product_id, String productName) {
+    public Product(int product_id, String productName) {
         this.product_id = product_id;
         this.productName = productName;
     }
@@ -27,11 +27,11 @@ public class Product {
     public Product(){}
 
 
-    public Long getId() {
+    public int getId() {
         return product_id;
     }
 
-    public void setId(Long product_id) {
+    public void setId(int product_id) {
         this.product_id = product_id;
     }
 
@@ -52,14 +52,7 @@ public class Product {
         this.category = category;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "product_id=" + product_id +
-                ", productName='" + productName + '\'' +
-                ", category=" + category +
-                '}';
-    }
+
 }
 
 

@@ -4,42 +4,244 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db3f6844-b9b6-4617-9fd9-3f29dfd1b3d4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+    <list default="true" id="855bb4b1-0b66-4026-a662-c230f2f6b9a9" name="Changes" comment="InventoryDaoImplTest.java">
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/service/CategoryServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/service/MartServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/dal/PFE/service/ProductServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="refactor-product_classes" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2NfABptuVIRMyux4dsKxLUqrhyB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Jayant Patidar/Desktop/BB backend/group15"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/baneja14/Downloads/ASDC_Project/group15new&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="JUnit.CategoryServiceImplTest">
+    <configuration name="CategoryDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Financial-Economizer-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dal.PFE.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dal.PFE.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.dal.PFE.dao.CategoryDaoImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Financial-Economizer-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dal.PFE.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dal.PFE.service" />
+      <option name="MAIN_CLASS_NAME" value="com.dal.PFE.service.CategoryServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Financial-Economizer-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dal.PFE.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dal.PFE.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.dal.PFE.dao.InventoryDaoImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Financial-Economizer-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dal.PFE.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dal.PFE.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.dal.PFE.dao.ProductDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Financial-Economizer-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dal.PFE.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dal.PFE.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.dal.PFE.dao.UserDaoImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CategoryServiceImplTest" />
+        <item itemvalue="JUnit.CategoryDaoImplTest" />
+        <item itemvalue="JUnit.InventoryDaoImplTest" />
+        <item itemvalue="JUnit.UserDaoImplTest" />
+        <item itemvalue="JUnit.ProductDaoTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="db3f6844-b9b6-4617-9fd9-3f29dfd1b3d4" name="Changes" comment="" />
+      <changelist id="855bb4b1-0b66-4026-a662-c230f2f6b9a9" name="Changes" comment="" />
       <created>1680044629500</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680044629500</updated>
     </task>
+    <task id="LOCAL-00001" summary="Refactored ProductDaoImpl to fix 2 long statement implementation smells in getAllSearchedProducts method">
+      <created>1680291454727</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680291454727</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactored ProductDaoImpl to fix 2 long statement implementation smells in getAllSearchedProducts method">
+      <created>1680924418036</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680924418036</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Re-wrote ProductDaoImplTest.java to cater changes in ProductDaoImpl file + changed product id data type to int everywhere.">
+      <created>1680929057583</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680929057583</updated>
+    </task>
+    <task id="LOCAL-00004" summary="corrected ProductControllerTest">
+      <created>1680930128348</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680930128348</updated>
+    </task>
+    <task id="LOCAL-00005" summary="corrected ProductDaoTest and added some changes in ProductDaoImpl.java">
+      <created>1680931823781</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680931823781</updated>
+    </task>
+    <task id="LOCAL-00006" summary="wrote CategoryDaoImplTest and added default constructor in category class">
+      <created>1680933204996</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680933204996</updated>
+    </task>
+    <task id="LOCAL-00007" summary="UserDaoImplTest.java">
+      <created>1680936234646</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680936234646</updated>
+    </task>
+    <task id="LOCAL-00008" summary="InventoryDaoImplTest.java">
+      <created>1680941070678</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680941070678</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactored ProductDaoImpl to fix 2 long statement implementation smells in getAllSearchedProducts method" />
+    <MESSAGE value="Re-wrote ProductDaoImplTest.java to cater changes in ProductDaoImpl file + changed product id data type to int everywhere." />
+    <MESSAGE value="corrected ProductControllerTest" />
+    <MESSAGE value="corrected ProductDaoTest and added some changes in ProductDaoImpl.java" />
+    <MESSAGE value="wrote CategoryDaoImplTest and added default constructor in category class" />
+    <MESSAGE value="UserDaoImplTest.java" />
+    <MESSAGE value="InventoryDaoImplTest.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="InventoryDaoImplTest.java" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/group15new$ProductDaoTest.ic" NAME="ProductDaoTest Coverage Results" MODIFIED="1680935056825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.dal.PFE.dao.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/group15new$FinancialEconomizerBackendApplication.ic" NAME="FinancialEconomizerBackendApplication Coverage Results" MODIFIED="1680930228369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.dal.PFE.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/group15new$UserServiceImplTest.ic" NAME="UserServiceImplTest Coverage Results" MODIFIED="1680934998943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.dal.PFE.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/group15new$CategoryControllerTest.ic" NAME="CategoryControllerTest Coverage Results" MODIFIED="1680930370986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.dal.PFE.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/group15new$UserDaoImplTest.ic" NAME="UserDaoImplTest Coverage Results" MODIFIED="1680935945129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.dal.PFE.dao.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/group15new$ProductControllerTest.ic" NAME="ProductControllerTest Coverage Results" MODIFIED="1680930614627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.dal.PFE.controller.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -13,4 +13,6 @@ public interface InventoryService {
 
 
     List<Inventory> setExpiryDates(List<Inventory> scannedProducts);
+
+    List<Inventory> getExpiryInventoryFromEmail(String email);
 }

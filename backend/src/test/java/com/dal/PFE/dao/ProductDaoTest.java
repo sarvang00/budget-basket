@@ -27,7 +27,7 @@ public class ProductDaoTest {
     @BeforeEach
     public void setUp() {
         productRepository = mock(ProductRepository.class);
-        productDao = new ProductDaoImpl();
+        productDao = new ProductDaoImpl(productRepository);
     }
 
     @Test
@@ -35,10 +35,10 @@ public class ProductDaoTest {
         Category category = new Category();
         category.setCategoryName("fruits");
 
-        Product product1 = new Product(1L, "apple");
+        Product product1 = new Product(1, "apple");
         product1.setCategory(category);
 
-        Product product2 = new Product(2L, "orange");
+        Product product2 = new Product(2, "orange");
         product2.setCategory(category);
 
         List<Product> expectedProducts = Arrays.asList(product1, product2);

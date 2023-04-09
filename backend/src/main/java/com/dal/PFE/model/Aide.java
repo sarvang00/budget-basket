@@ -100,16 +100,5 @@ public class Aide implements Mart{
         this.productAvailability = productAvailability;
     }
 
-    @Override
-    public String toString() {
-        return "Aide{" +
-                "martProdId=" + martProdId +
-                ", productId=" + productId +
-                ", productPrice=" + productPrice +
-                ", priceQuantity=" + priceQuantity +
-                ", unit='" + unit + '\'' +
-                ", productDescription='" + productDescription + '\'' +
-                ", productAvailability=" + productAvailability +
-                '}';
-    }
+
 }

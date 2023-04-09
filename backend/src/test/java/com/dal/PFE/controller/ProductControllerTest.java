@@ -40,19 +40,21 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void testGetAllProducts() throws Exception {
+    public void testGetAllProductsIdsSearched() throws Exception {
         // Mocking data
         List<Product> productList = new ArrayList<>();
-        productList.add(new Product(101L, "TestProduct 1"));
-        productList.add(new Product(102L, "TestProduct 2"));
+        productList.add(new Product(101, "TestProduct 1"));
+        productList.add(new Product(102, "TestProduct 2"));
         when(productService.getAllProductsIdsSearched("")).thenReturn(productList);
 
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/product/getAllProducts"))
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/product/getAllProductsIdsSearched"))
                 .andReturn();
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
+
         String expectedResponse = "[{\"name\":\"TestProduct 1\",\"id\":101},{\"name\":\"TestProduct 2\",\"id\":102}]";
+        //String expectedResponse = "[{\"id\":101,\"name\":\"TestProduct 1\"},{\"id\":102,\"name\":\"TestProduct 2\"}]";
         assertEquals(expectedResponse, content);
     }
 
