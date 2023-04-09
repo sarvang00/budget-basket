@@ -31,7 +31,21 @@ class InventoryControllerTest {
 
     @Test
     void saveProductsInInventory() {
+        // create a sample inventory object
         Inventory inventory = new Inventory(
+                1,
+                "Test Product",
+                "Test Category",
+                5,
+                10.0,
+                new Date(),
+                null,
+                "test@example.com"
+        );
+
+        // create a sample list of inventory objects with expiry dates set
+        List<Inventory> expiryDatesProducts = new ArrayList<>();
+        Inventory expiryInventory = new Inventory(
                 1,
                 "Test Product",
                 "Test Category",
@@ -41,10 +55,18 @@ class InventoryControllerTest {
                 new Date(),
                 "test@example.com"
         );
-        when(inventoryService.saveProductsInInventory(any())).thenReturn(inventory);
+        expiryDatesProducts.add(expiryInventory);
 
+        // setup the mock inventoryService to return the sample list of expiry inventory objects
+        when(inventoryService.setExpiryDates(anyList())).thenReturn(expiryDatesProducts);
+
+        // setup the mock inventoryService to return the first inventory object in the expiry list
+        when(inventoryService.saveProductsInInventory(any())).thenReturn(expiryInventory);
+
+        // call the saveProductsInInventory function and verify the result
         Inventory result = inventoryController.saveProductsInInventory(inventory);
 
+        verify(inventoryService, times(1)).setExpiryDates(anyList());
         verify(inventoryService, times(1)).saveProductsInInventory(any());
         assert result != null;
         assert result.getProductId() == 1;
