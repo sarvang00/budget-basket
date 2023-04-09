@@ -10,7 +10,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="refactor-product_classes" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -36,7 +48,93 @@
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="JUnit.CategoryControllerTest">
+    <configuration name="CategoryControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Financial-Economizer-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dal.PFE.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dal.PFE.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.dal.PFE.controller.CategoryControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Financial-Economizer-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dal.PFE.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dal.PFE.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.dal.PFE.dao.CategoryDaoImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Financial-Economizer-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dal.PFE.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dal.PFE.service" />
+      <option name="MAIN_CLASS_NAME" value="com.dal.PFE.service.CategoryServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MartServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Financial-Economizer-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dal.PFE.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dal.PFE.service" />
+      <option name="MAIN_CLASS_NAME" value="com.dal.PFE.service.MartServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Financial-Economizer-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dal.PFE.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dal.PFE.service" />
+      <option name="MAIN_CLASS_NAME" value="com.dal.PFE.service.ProductServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CategoryControllerTest" />
+        <item itemvalue="JUnit.MartServiceImplTest" />
+        <item itemvalue="JUnit.ProductServiceImplTest" />
+        <item itemvalue="JUnit.CategoryServiceImplTest" />
+        <item itemvalue="JUnit.CategoryDaoImplTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -44,8 +142,7 @@
       <created>1680986637301</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1680986637301</updated>
-      <workItem from="1680986639677" duration="96000" />
+      <updated>1680044629500</updated>
     </task>
     <servers />
   </component>

@@ -12,4 +12,7 @@ public interface InventoryRepository extends JpaRepository<Inventory,Integer> {
     List<Inventory> getInventoryFromEmail(String email);
 
 
+    @Query("from Inventory as i where i.userEmail=?1 and i.expiryDate < DATEADD(day,0,current_date()) and i.expiryDate > DATEADD(day,-1,current_date())")
+    List<Inventory> getExpiryInventoryFromEmail(String email);
+
 }

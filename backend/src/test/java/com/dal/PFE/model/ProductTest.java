@@ -13,14 +13,14 @@ public class ProductTest {
     @Test
     public void testingGettersAndSetters() {
         // Arrange
-        Product product = new Product(101L, "TestProduct");
-        product.setId(101L);
+        Product product = new Product(101, "TestProduct");
+        product.setId(101);
         product.setName("TestProduct");
 
         //Assert
         assertNotNull(product.getId());
         assertNotNull(product.getName());
-        assertEquals(101L, product.getId());
+        assertEquals(101, product.getId());
         assertEquals("TestProduct", product.getName());
     }
 }

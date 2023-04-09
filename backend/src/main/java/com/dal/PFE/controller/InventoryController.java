@@ -1,6 +1,5 @@
 package com.dal.PFE.controller;
 
-import com.dal.PFE.dao.InventoryDao;
 import com.dal.PFE.model.Inventory;
 import com.dal.PFE.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +44,10 @@ public class InventoryController {
     @GetMapping({"/getInventory"})
     public List<Inventory> getInventoryFromEmail(@RequestParam(value="user",defaultValue = "") String email){
         return inventoryService.getInventoryFromEmail(email);
+    }
+
+    @GetMapping({"/getExpiryInventory"})
+    public List<Inventory> getExpiryInventoryFromEmail(@RequestParam(value="user",defaultValue = "") String email){
+        return inventoryService.getExpiryInventoryFromEmail(email);
     }
 }

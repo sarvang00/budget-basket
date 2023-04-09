@@ -26,6 +26,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
+    @Transactional
     public List<ProductAndMart> getAllSearchedProducts(String keyword) {
         return productDao.getAllSearchedProducts(keyword);
     }

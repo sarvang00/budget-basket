@@ -34,11 +34,11 @@ public class InventoryDaoImpl implements InventoryDao {
                 case "dairy":
                 case "bakery":
                 case "vegetable":
-                case "fruites":
+                case "fruits":
                 case "beverages":
                     //EXPIRY_PERIOD = 3 hard coded
-                    int EXPIRY_PERIOD = 3;
-                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), EXPIRY_PERIOD));
+                    int EXPIRY_PERIOD1 = 3;
+                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), EXPIRY_PERIOD1));
                     break;
                 case "beef":
                 case "chicken":
@@ -46,8 +46,9 @@ public class InventoryDaoImpl implements InventoryDao {
                 case "pork":
                 case "turkey":
                 case "salami":
-
-                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), 5));
+                    //EXPIRY_PERIOD = 5 hard coded
+                    int EXPIRY_PERIOD2 = 5;
+                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), EXPIRY_PERIOD2));
                     break;
                 case "baking supplies":
                 case "condiments":
@@ -62,10 +63,14 @@ public class InventoryDaoImpl implements InventoryDao {
                 case "soups":
                 case "grains":
                 case "oils":
-                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), 7));
+                    //EXPIRY_PERIOD = 7 hard coded
+                    int EXPIRY_PERIOD3 = 7;
+                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), EXPIRY_PERIOD3));
                     break;
                 default:
-                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), 6));
+                    //EXPIRY_PERIOD = 6 hard coded
+                    int EXPIRY_PERIOD4 = 6;
+                    product.setExpiryDate(DateUtils.addDays(product.getPurchaseDate(), EXPIRY_PERIOD4));
                     break;
             }
         }
@@ -75,6 +80,11 @@ public class InventoryDaoImpl implements InventoryDao {
     @Override
     public void saveScannedProductsInInventory(List<Inventory> scannedProducts) {
         inventoryRepository.saveAll(scannedProducts);
+    }
+
+    @Override
+    public List<Inventory> getExpiryInventoryFromEmail(String email) {
+        return inventoryRepository.getExpiryInventoryFromEmail(email);
     }
 
 }
