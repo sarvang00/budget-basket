@@ -59,7 +59,7 @@
                             </div>
                             <div class="col-12">
                                 <!-- input --><input type="email" class="form-control" id="inputEmail4"
-                                    placeholder="Email" required [(ngModel)]="userEmail" name="userEmail">
+                                    placeholder="Email" required [(ngModel)]="userEmail" name="userEmail" validate="regexValidations.emailValidation" ngModel>
                             </div>
                             <div class="col-12">
 
@@ -70,7 +70,9 @@
                                 </div>
                             </div>
                             <!-- btn -->
-                            <div class="col-12 d-grid"> <button type="submit" class="btn btn-primary" (click)="handleSignUp()">Register</button>
+                            <div class="col-12 d-grid">
+                              <button type="submit" class="btn btn-primary" (click)="handleSignUp()">Register</button>
+<!--                              <button class="btn btn-success" type="submit" [disabled]="!signupForm.valid">Submit</button>-->
                             </div>
 
                             <!-- text -->
