@@ -30,11 +30,11 @@ public class InventoryDaoImpl implements InventoryDao {
     public List<Inventory> setExpiryDates(List<Inventory> scannedProducts) {
         for (Inventory product : scannedProducts) {
             // Set the expiry date based on the product category
-            switch (product.getProductCategory()) {
+            switch (product.getProductCategory().toLowerCase()) {
                 case "dairy":
                 case "bakery":
                 case "vegetable":
-                case "fruits":
+                case "fruit":
                 case "beverages":
                     //EXPIRY_PERIOD = 3 hard coded
                     int EXPIRY_PERIOD1 = 3;
@@ -55,7 +55,7 @@ public class InventoryDaoImpl implements InventoryDao {
                 case "canned goods":
                 case "cereal":
                 case "chips and snacks":
-                case "frozen foods":
+                case "frozen food":
                 case "pasta":
                 case "nuts":
                 case "spices":
