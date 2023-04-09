@@ -14,9 +14,6 @@ export class FinManagerService {
   constructor(private httpClient : HttpClient) {}
 
    addOrder(orderDetails: Order){
-      // console.log("hit to backedn");
-      // console.log(orderDetails);
-      // console.log("dbdbdbdb dbdb");
       this.httpClient.post('http://'+this.publicIP+':9090/inventory/saveProductsInInventory', orderDetails).subscribe();
    }
 
