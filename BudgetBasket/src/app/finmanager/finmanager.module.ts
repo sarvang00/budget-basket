@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FinmanagerRoutingModule } from './finmanager-routing.module';
@@ -8,7 +8,7 @@ import { OrderModelComponent } from './order/order.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BillScanComponent } from './bill-scan/bill-scan.component';
-
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { BillScanComponent } from './bill-scan/bill-scan.component';
   imports: [
     CommonModule,
     FinmanagerRoutingModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true })
   ]
 })
 export class FinmanagerModule { }
