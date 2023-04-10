@@ -13,6 +13,7 @@ build-backend:
     paths:
       - backend/target/*.jar
   only:
+    - main
     - dev
     - backend-dev
 
@@ -29,6 +30,7 @@ build-frontend:
     paths:
       - BudgetBasket/dist/
   only:
+    - main
     - dev
     - frontend-dev
 
@@ -39,6 +41,7 @@ test_backend:
     - cd backend
     - mvn test
   only:
+    - main
     - dev
     - backend-dev
 
