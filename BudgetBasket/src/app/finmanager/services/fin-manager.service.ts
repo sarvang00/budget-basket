@@ -25,7 +25,7 @@ export class FinManagerService {
    }
 
    getExpiringToday(userEmail: String): Observable<any>  {
-    var expiringToday = "http://"+this.publicIP+":9090/inventory/getExpiringToday?user="+userEmail;
+    var expiringToday = "http://"+this.publicIP+":9090/inventory/getExpiryInventory?user="+userEmail;
     return this.httpClient.get(expiringToday).pipe(tap((expiringResults: any) => {
       this.ordersSubject.next(expiringResults);
     }));    
